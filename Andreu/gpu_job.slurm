@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition=tfgm          # Replace with the correct partition name
+#SBATCH --partition=tfg           # Replace with the correct partition name
 #SBATCH --gres=gpu:1              # Request 1 GPU
 #SBATCH --cpus-per-task=4         # Number of CPU cores
 #SBATCH --mem=16G                 # Memory allocation

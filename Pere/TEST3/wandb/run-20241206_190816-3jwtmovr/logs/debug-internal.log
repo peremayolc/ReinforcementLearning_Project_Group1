@@ -1,0 +1,19 @@
+{"time":"2024-12-06T19:08:16.91842705+01:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-12-06T19:08:16.918454106+01:00","level":"INFO","msg":"created symlink","path":"/export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/TEST3/wandb/run-20241206_190816-3jwtmovr/logs/debug-core.log"}
+{"time":"2024-12-06T19:08:17.03409056+01:00","level":"INFO","msg":"created new stream","id":"3jwtmovr"}
+{"time":"2024-12-06T19:08:17.034177246+01:00","level":"INFO","msg":"stream: started","id":"3jwtmovr"}
+{"time":"2024-12-06T19:08:17.034193015+01:00","level":"INFO","msg":"handler: started","stream_id":"3jwtmovr"}
+{"time":"2024-12-06T19:08:17.03423198+01:00","level":"INFO","msg":"sender: started","stream_id":"3jwtmovr"}
+{"time":"2024-12-06T19:08:17.034284654+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"3jwtmovr"}
+{"time":"2024-12-06T19:08:17.341067263+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-06T19:30:02.972762389+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/peremayolc-universitat-aut-noma-de-barcelona/PERE-DEFINITVE-TEST/3jwtmovr/file_stream"}
+{"time":"2024-12-06T20:35:10.871339645+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-06T20:35:10.872291444+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-06T20:35:11.871995652+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.518989491,"progress":"227.0KB/227.0KB"}],"total_operations":1}}
+{"time":"2024-12-06T20:35:11.970313704+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-06T20:35:13.213357185+01:00","level":"INFO","msg":"stream: closing","id":"3jwtmovr"}
+{"time":"2024-12-06T20:35:13.213398632+01:00","level":"INFO","msg":"handler: closed","stream_id":"3jwtmovr"}
+{"time":"2024-12-06T20:35:13.213422441+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"3jwtmovr"}
+{"time":"2024-12-06T20:35:13.213756265+01:00","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: api: failed sending: POST https://api.wandb.ai/graphql giving up after 1 attempt(s): context canceled"}
+{"time":"2024-12-06T20:35:13.215451382+01:00","level":"INFO","msg":"sender: closed","stream_id":"3jwtmovr"}
+{"time":"2024-12-06T20:35:13.215515433+01:00","level":"INFO","msg":"stream: closed","id":"3jwtmovr"}

@@ -200,7 +200,6 @@ env = gym.make("ALE/Kaboom-v5", obs_type="grayscale")
 import cv2
 import numpy as np
 import collections
-import gym.spaces
 
 env = make_env(env)
 
@@ -366,7 +365,7 @@ class REINFORCE_Agent:
         policy_loss.backward()
         self.optimizer.step()
 
-def train_reinforce(env, policy_net, optimizer, hyperparameters, target_reward, DEVICE):
+def train_reinforce(env, policy_net, optimizer, gamma, DEVICE):
     """
     Train a REINFORCE agent in the given environment.
 
@@ -382,9 +381,9 @@ def train_reinforce(env, policy_net, optimizer, hyperparameters, target_reward, 
         total_rewards: List of total rewards per episode.
         avg_reward_history: List of average rewards over time.
     """
-    # Unpack hyperparameters
-    gamma = hyperparameters["gamma"]
-    max_episodes = hyperparameters["max_episodes"]
+
+    max_episodes = 10
+    target_reward = 20
 
     total_rewards = []
     avg_reward_history = []
@@ -450,55 +449,40 @@ def train_reinforce(env, policy_net, optimizer, hyperparameters, target_reward, 
 
     return policy_net, total_rewards, avg_reward_history
 
-#MAIN!!
-def main():
-    # Environment Setup
-    env = gym.make("ALE/Kaboom-v5", obs_type="grayscale")
-    env = make_env(env)
+env = gym.make("ALE/Kaboom-v5", obs_type="grayscale")
+env = make_env(env)
 
-    # Device Configuration
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"Using device: {device}")
+# Device Configuration
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}")
 
-    # Hyperparameters
-    hyperparameters = {
-        "gamma": 0.999,
-        "max_episodes": 1500,
-        "learning_rate": 5e-4,
-        "target_reward": 20,  # Define a target reward
-    }
+# Policy Network and Optimizer
+input_shape = env.observation_space.shape
+action_dim = env.action_space.n
+policy_net_model = policy_net(input_shape, action_dim).to(device)
 
-    # Policy Network and Optimizer
-    input_shape = env.observation_space.shape
-    action_dim = env.action_space.n
-    policy_net_model = policy_net(input_shape, action_dim).to(device)
-    optimizer = optim.Adam(policy_net_model.parameters(), lr=hyperparameters["learning_rate"])
+gammas=[0.99,0.95]
+lrs =[5e-5, 1e-4]
 
-    # Train the Agent
+for learning_rate in lrs:
+  for gamma in gammas:
+    optimizer = optim.Adam(policy_net_model.parameters(), lr=learning_rate)
     print("Training the REINFORCE Agent...")
     trained_policy, total_rewards, avg_reward_history = train_reinforce(
-        env,
-        policy_net_model,
-        optimizer,
-        hyperparameters,
-        hyperparameters["target_reward"],
-        DEVICE=device
+      env,
+      policy_net_model,
+      optimizer,
+      gamma,
+      DEVICE=device
     )
 
-    # Plot Training Results
     plt.figure(figsize=(10, 5))
     plt.plot(avg_reward_history, label="Average Reward (last 100 episodes)")
     plt.xlabel("Episodes")
     plt.ylabel("Average Reward")
-    plt.title("Training Progress")
+    plt.title("Training Process")
     plt.legend()
     plt.show()
 
-    plt.savefig('TRAINING-PROCESS.png')  # Save as PNG with high resolution
+    plt.savefig(f'TRAINING-PROCESS[{learning_rate}][{gamma}].png')
     plt.close()
-
-    return trained_policy, total_rewards, avg_reward_history
-
-# Run the main function
-if __name__ == "__main__":
-    trained_policy, total_rewards, avg_reward_history = main()

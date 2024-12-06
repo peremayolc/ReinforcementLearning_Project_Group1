@@ -71,6 +71,7 @@ import gymnasium as gym
 
 import ale_py
 from ale_py import ALEInterface
+from gymnasium.wrappers import TransformReward
 
 #set the environment as Kaboom
 env = gym.make("ALE/Kaboom-v5", obs_type="grayscale")
@@ -248,6 +249,213 @@ class ScaledFloatFrame(gym.ObservationWrapper):
     def observation(self, obs):
         return np.array(obs).astype(np.float32) / 255.0
 
+
+import cv2
+import numpy as np
+import collections
+import gym
+from gym import spaces
+
+import cv2
+import numpy as np
+import gym
+from gym import spaces
+
+class EnhancedRewardWrapper(gym.Wrapper):
+    def __init__(self, env, initial_lives=3, penalty=-5, bonus=1, 
+                 level_ascend_reward=10, level_descend_penalty=-10, 
+                 level_threshold=1000):
+        """
+        Enhanced Reward Wrapper that detects explosions, counts lives, and monitors level changes.
+
+        Args:
+            env (gym.Env): The environment to wrap.
+            initial_lives (int): Starting number of lives.
+            penalty (float): Penalty for an explosion.
+            bonus (float): Bonus for maintaining lives or desired behaviors.
+            level_ascend_reward (float): Reward for ascending a level.
+            level_descend_penalty (float): Penalty for descending a level.
+            level_threshold (int): Score threshold to determine level changes.
+        """
+        super(EnhancedRewardWrapper, self).__init__(env)
+        self.initial_lives = initial_lives
+        self.lives = initial_lives
+        self.penalty = penalty
+        self.bonus = bonus
+        self.level_ascend_reward = level_ascend_reward
+        self.level_descend_penalty = level_descend_penalty
+        self.level_threshold = level_threshold
+        self.previous_frame = None
+        self.explosion_detected = False
+        self.current_level = 1
+        self.previous_level = 1
+        self.previous_score = 0
+
+    def reset(self, **kwargs):
+        obs, info = self.env.reset(**kwargs)
+        self.lives = self.initial_lives
+        self.previous_frame = self.preprocess_frame(obs)
+        self.previous_score = self.extract_score(info)
+        self.previous_level = self.calculate_level(self.previous_score)
+        self.current_level = self.previous_level
+        return obs, info
+
+    def step(self, action):
+        obs, reward, terminated, truncated, info = self.env.step(action)
+        
+        # Initialize reward components
+        total_reward = 0.0
+        explosion_penalty_applied = False
+        level_reward_applied = 0.0
+        survival_bonus_applied = False
+
+        # Preprocess current frame
+        current_frame = self.preprocess_frame(obs)
+        
+        # Detect explosion
+        explosion = self.detect_explosion(self.previous_frame, current_frame)
+        
+        if explosion:
+            self.lives -= 1
+            total_reward += self.penalty  # Penalize for explosion
+            explosion_penalty_applied = True
+            print(f"Explosion detected! Lives remaining: {self.lives}")
+            if self.lives <= 0:
+                terminated = True
+                print("No lives left. Episode terminated.")
+        else:
+            # Provide a small bonus for surviving the step
+            total_reward += self.bonus
+            survival_bonus_applied = True
+        
+        # Detect level changes
+        current_score = self.extract_score(info)
+        current_level = self.calculate_level(current_score)
+        
+        if current_level > self.current_level:
+            # Level Ascended
+            level_reward = self.level_ascend_reward
+            total_reward += level_reward
+            level_reward_applied = level_reward
+            print(f"Level Up! Ascended to Level {current_level}. Reward: {level_reward}")
+        elif current_level < self.current_level:
+            # Level Descended
+            level_penalty = self.level_descend_penalty
+            total_reward += level_penalty
+            level_reward_applied = level_penalty
+            print(f"Level Down! Descended to Level {current_level}. Penalty: {level_penalty}")
+        
+        # Update current level
+        self.current_level = current_level
+        
+        # Update previous frame
+        self.previous_frame = current_frame
+        
+        # Update previous score
+        self.previous_score = current_score
+        
+        # Add lives and level information to info
+        info['lives'] = self.lives
+        info['current_level'] = self.current_level
+        info['score'] = current_score
+
+        # Log reward components
+        if explosion_penalty_applied:
+            print(f"Applied Explosion Penalty: {self.penalty}")
+        if survival_bonus_applied:
+            print(f"Applied Survival Bonus: {self.bonus}")
+        if level_reward_applied != 0.0:
+            print(f"Applied Level Reward: {level_reward_applied}")
+        
+        # Sum the environment's original reward with the wrapper's modifications
+        modified_reward = reward + total_reward
+
+        return obs, modified_reward, terminated, truncated, info
+
+    def preprocess_frame(self, frame):
+        """
+        Preprocess the frame for explosion detection.
+        Convert to grayscale and resize if necessary.
+        """
+        # Ensure frame has 3 channels (RGB)
+        if len(frame.shape) == 3 and frame.shape[2] == 3:
+            gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+        elif len(frame.shape) == 2:
+            # Frame is already grayscale
+            gray = frame
+        else:
+            raise ValueError(f"Unexpected frame shape: {frame.shape}")
+        
+        resized = cv2.resize(gray, (84, 84), interpolation=cv2.INTER_AREA)
+        return resized
+
+    def detect_explosion(self, prev_frame, current_frame, threshold=50):
+        """
+        Detects an explosion by measuring the change between frames.
+        
+        Args:
+            prev_frame (np.array): The previous grayscale frame.
+            current_frame (np.array): The current grayscale frame.
+            threshold (float): Threshold for detecting significant changes.
+        
+        Returns:
+            bool: True if an explosion is detected, False otherwise.
+        """
+        if prev_frame is None:
+            return False
+
+        # Compute absolute difference between frames
+        diff = cv2.absdiff(current_frame, prev_frame)
+        mean_diff = np.mean(diff)
+        
+        # Debug: Print mean difference
+        # print(f"Mean frame difference: {mean_diff}")
+
+        # If the mean difference exceeds the threshold, assume an explosion
+        return mean_diff > threshold
+
+    def extract_score(self, info):
+        """
+        Extracts the current score from the info dictionary.
+        
+        Args:
+            info (dict): Information dictionary from the environment.
+        
+        Returns:
+            int: Current score.
+        """
+        # Log the info dictionary for debugging
+        print(f"Info Dictionary: {info}")
+
+        # Adjust based on actual info structure
+        if 'score' in info:
+            return info['score']
+        elif 'total_reward' in info:
+            return int(info['total_reward'])
+        else:
+            # If no score is available, track manually or adjust accordingly
+            return self.previous_score
+
+    def calculate_level(self, score):
+        """
+        Calculates the current level based on the score.
+        
+        Args:
+            score (int): Current score.
+        
+        Returns:
+            int: Current level.
+        """
+        # Define how levels are determined from the score.
+        # For example, each level requires an additional 'level_threshold' points.
+        return max(1, score // self.level_threshold + 1)
+
+
+
+
+
+
+
 def make_env(env):
     print("Standard Env.        : {}".format(env.observation_space.shape))
     env = MaxAndSkipEnv(env)
@@ -256,12 +464,27 @@ def make_env(env):
     print("FireResetEnv         : {}".format(env.observation_space.shape))
     env = ProcessFrame84(env)
     print("ProcessFrame84       : {}".format(env.observation_space.shape))
+    
+    # Insert EnhancedRewardWrapper before BufferWrapper
+    env = EnhancedRewardWrapper(
+        env, 
+        initial_lives=3, 
+        penalty=-5, 
+        bonus=0, 
+        level_ascend_reward=10, 
+        level_descend_penalty=-10, 
+        level_threshold=1000  # Adjust based on game mechanics
+    )
+    print("EnhancedRewardWrapper: Applied")
+    
     env = BufferWrapper(env, 4)
     print("BufferWrapper        : {}".format(env.observation_space.shape))
     env = ScaledFloatFrame(env)
     print("ScaledFloatFrame     : {}".format(env.observation_space.shape))
     env = EnvCompatibility(env)
+    
     return env
+
 
 
 def print_env_info(name, env):
@@ -283,7 +506,7 @@ else:
 
 import torch
 import torch.nn as nn
-
+'____________________________________________________________________________________________________________________________________________________________'
 class DQN(nn.Module):
     def __init__(self, input_shape, action_dim):
         """
@@ -352,7 +575,7 @@ class DQN(nn.Module):
         x = self.fc2(x)  # Output Q-values
         return x
 
-
+'____________________________________________________________________________________________________________________________________________________________'
 """**REPLAY** **BUFFER**"""
 
 class SumTree:
@@ -428,7 +651,7 @@ class SumTree:
         Get the total priority.
         """
         return self.tree[0]
-
+'____________________________________________________________________________________________________________________________________________________________'
 Experience = collections.namedtuple('Experience', field_names=['state', 'action', 'reward', 'done', 'new_state','td_error'])
 class ExperienceReplay:
     def __init__(self, capacity, alpha=0.6, epsilon=1e-5):
@@ -480,46 +703,13 @@ class ExperienceReplay:
     def __len__(self):
         return self.tree.n_entries
 
-    def sample(self, batch_size, beta=0.4):
-        batch = []
-        idxs = []
-        segment = self.tree.total / batch_size
-        priorities = []
-
-        for i in range(batch_size):
-            a = segment * i
-            b = segment * (i + 1)
-            s = np.random.uniform(a, b)
-            idx, priority, data = self.tree.get(s)
-            batch.append(data)
-            idxs.append(idx)
-            priorities.append(priority)
-
-        sampling_probabilities = priorities / self.tree.total
-        is_weight = np.power(self.tree.n_entries * sampling_probabilities, -beta)
-        is_weight /= is_weight.max()
-        is_weight = np.array(is_weight, dtype=np.float32)
-
-        # Unpack experiences
-        states, actions, rewards, dones, next_states, _ = zip(*batch)
-
-        return (
-            np.array(states),
-            np.array(actions),
-            np.array(rewards, dtype=np.float32),
-            np.array(dones, dtype=np.uint8),
-            np.array(next_states),
-            is_weight,
-            idxs
-        )
-
     def update_priorities(self, idxs, td_errors):
         for idx, td_error in zip(idxs, td_errors):
             priority = (abs(td_error) + self.epsilon) ** self.alpha
             self.tree.update(idx, priority)
 
 """**DEEP Q-LEARNING ALGORITHM**"""
-
+'____________________________________________________________________________________________________________________________________________________________'
 Experience = collections.namedtuple('Experience', field_names=['state', 'action', 'reward', 'done', 'new_state','td_error'])
 
 
@@ -584,6 +774,7 @@ class Agent:
 
         try:
             new_state, reward, terminated, truncated, info = self.env.step(action)
+            #print(f"Lives: {info['custom_lives']} | Reward: {reward}")
             is_done = terminated or truncated
         except ValueError:
             # Fallback for environments returning 4 values
@@ -592,6 +783,8 @@ class Agent:
             terminated = done
             truncated = False
             info = info
+            print(f"Lives: {info['custom_lives']} | Reward: {reward}")
+            print(new_state)
         self.total_reward += reward
         exp = Experience(self.current_state, action, reward, is_done, new_state, td_error=1.0)
         self.exp_replay_buffer.append(exp)
@@ -599,9 +792,9 @@ class Agent:
         if is_done:
             done_reward = self.total_reward
             self._reset()
-        return done_reward
+        return reward, done_reward
 
-
+'____________________________________________________________________________________________________________________________________________________________'
 """**MAIN BUCLE**"""
 
 def train_model(env, hyperparameters, target_reward):
@@ -643,36 +836,47 @@ def train_model(env, hyperparameters, target_reward):
     loss_history = []
     avg_reward_history = []
 
+    done = False
     # Optional: Watch the model
-    wandb.watch(net, log="all", log_freq=1000)
+    wandb.watch(net, log="all", log_freq=10)
 
-    while len(total_rewards) < 1000:
+    while len(total_rewards) == 500:
         frame_number += 1
         epsilon = max(epsilon * epsilon_decay, EPS_MIN)
-        reward = agent.step(net, epsilon=epsilon, device=device)
+        
+        # Get immediate and cumulative rewards
+        immediate_reward, cumulative_reward = agent.step(net, epsilon=epsilon, device=device)
 
-        print(f"Step: {frame_number} | reward: {reward}")
+        print(f"Step: {frame_number} | Immediate Reward: {immediate_reward}")
 
+        # Log immediate reward to wandb
+        wandb.log({
+            "immediate_reward": immediate_reward,
+            "frame_number": frame_number,
+        })
 
-        if reward is not None:
-            total_rewards.append(reward)
+        # If an episode ends, log cumulative reward
+        if cumulative_reward is not None:
+            print('Episode Ended with Cumulative Reward:', cumulative_reward)
+            total_rewards.append(cumulative_reward)
+
             mean_reward = np.mean(total_rewards[-NUMBER_OF_REWARDS_TO_AVERAGE:])
 
-            if len(total_rewards) % 10 == 0 or mean_reward > target_reward:
-                print(f"Frame:{frame_number} | Total games:{len(total_rewards)} | Mean reward: {mean_reward:.3f} (epsilon: {epsilon:.2f})")
-
-            avg_reward_history.append(mean_reward)
-
-            # Log the reward metrics to wandb
             wandb.log({
+                "cumulative_reward": cumulative_reward,
                 "episode": len(total_rewards),
                 "mean_reward": mean_reward,
                 "epsilon": epsilon,
                 "frame_number": frame_number,
             })
 
+            if len(total_rewards) % 10 == 0 or mean_reward > target_reward:
+                print(f"Frame:{frame_number} | Total games:{len(total_rewards)} | Mean reward: {mean_reward:.3f} (epsilon: {epsilon:.2f})")
+
+            avg_reward_history.append(mean_reward)
+
             if mean_reward > target_reward:
-                print(f"SOLVED in {frame_number} frames and {len(total_rewards)} games")
+                #print(f"SOLVED in {frame_number} frames and {len(total_rewards)} games")
                 break
 
         if len(buffer) < batch_size:
@@ -715,7 +919,7 @@ def train_model(env, hyperparameters, target_reward):
         optimizer.step()
         loss_history.append(loss.item())
 
-        # Log loss to wandbt
+        # Log loss to wandb
         wandb.log({
             "loss": loss.item(),
             "frame_number": frame_number,
@@ -733,6 +937,7 @@ def train_model(env, hyperparameters, target_reward):
 
     return net, np.mean(total_rewards[-100:]), loss_history, avg_reward_history
 
+'____________________________________________________________________________________________________________________________________________________________'
 
 def plot_results(hyperparameters, loss_history, avg_reward_history, mean_reward, save_dir, smoothing_window=10):
     # Helper function to compute moving average
@@ -781,6 +986,111 @@ def save_training_data(save_dir, hyperparameters, avg_reward_history, loss_histo
     with open(file_path, 'w') as f:
         json.dump(data, f, indent=4)
     print("Training data saved to", file_path)
+'____________________________________________________________________________________________________________________________________________________________'
+
+def watch_agent_reinforce(env, models_dir, num_episodes=100, max_experiments=8):
+    """
+    Evaluates the first 'max_experiments' REINFORCE models in the specified directory and its subdirectories over a number of episodes,
+    selects the best-performing model based on average cumulative reward,
+    and returns the rewards and action lists for the best model.
+    
+    Args:
+        env (gym.Env): The Gymnasium environment.
+        models_dir (str): Directory containing subdirectories of REINFORCE model files (.pth).
+        num_episodes (int): Number of episodes to run for each model.
+        max_experiments (int): Maximum number of experiments to evaluate.
+    
+    Returns:
+        best_model (nn.Module): The best-performing REINFORCE model.
+        best_avg_reward (float): Average cumulative reward of the best model.
+        best_rewards (list): List of cumulative rewards for each episode of the best model.
+        best_actions (list): List of action sequences for each episode of the best model.
+    """
+    # Initialize variables to track the best model
+    best_avg_reward = -float('inf')
+    best_model = None
+    best_rewards = []
+    best_actions = []
+    best_model_name = ""
+    
+    # Get a sorted list of subdirectories to ensure consistent ordering
+    sorted_subdirs = sorted([d for d in os.listdir(models_dir) if os.path.isdir(os.path.join(models_dir, d))])
+    
+    # Limit to the first 'max_experiments' subdirectories
+    selected_subdirs = sorted_subdirs[:max_experiments]
+    
+    for subdir in selected_subdirs:
+        subdir_path = os.path.join(models_dir, subdir)
+        model_path = os.path.join(subdir_path, "model.pth")
+        
+        if os.path.exists(model_path):
+            print(f"Evaluating model: {model_path}")
+            
+            # Initialize the model (REINFORCE uses the same architecture as DQN without softmax)
+            model = DQN(env.observation_space.shape[0], env.action_space.n).to(device)
+            
+            try:
+                # Load the model weights
+                model.load_state_dict(torch.load(model_path, map_location=device))
+            except Exception as e:
+                print(f"Error loading {model_path}: {e}")
+                continue
+      
+            # Set the model to evaluation mode
+            model.eval()
+            
+            # Lists to store rewards and actions for this model
+            rewards = []
+            actions = []
+            
+            for episode in range(num_episodes):
+                state, _ = env.reset()
+                episode_reward = 0
+                episode_actions = []
+                done = False
+                
+                while not done:
+                    # Convert state to tensor
+                    state_tensor = torch.tensor(state, dtype=torch.float32).to(device)
+                    
+                    # Get action probabilities from the model (logits are converted via softmax)
+                    with torch.no_grad():
+                        logits = model(state_tensor)
+                        action_probs = torch.softmax(logits, dim=-1).cpu().numpy()
+                    
+                    # Sample an action based on the probabilities
+                    action = np.random.choice(env.action_space.n, p=action_probs)
+                    episode_actions.append(action)
+                    
+                    # Take the action in the environment
+                    next_state, reward, terminated, truncated, _ = env.step(action)
+                    done = terminated or truncated
+                    episode_reward += reward
+                    state = next_state
+
+        
+                rewards.append(episode_reward)
+                actions.append(episode_actions)
+            
+            # Calculate the average reward for this model
+            avg_reward = np.mean(rewards)
+            print(f"Average Reward for {model_path}: {avg_reward:.2f}")
+            
+            # Update the best model if this model has a higher average reward
+            if avg_reward > best_avg_reward:
+                best_avg_reward = avg_reward
+                best_model = model
+                best_rewards = rewards
+                best_actions = actions
+                best_model_name = subdir
+    
+    if best_model is not None:
+        print(f"\nBest Model: {best_model_name} with Average Reward: {best_avg_reward:.2f}")
+    else:
+        print("No valid models were evaluated.")
+    
+    return best_model, best_avg_reward, best_rewards, best_actions
+'____________________________________________________________________________________________________________________________________________________________'
 
 def hyperparameter_tuning(env, hyperparameter_space, target_reward, save_dir):
     # Create directory to save models
@@ -813,7 +1123,7 @@ def hyperparameter_tuning(env, hyperparameter_space, target_reward, save_dir):
         model, mean_reward, loss_history, avg_reward_history = train_model(env, hyperparameters, target_reward)
 
         print(f"Mean Reward: {mean_reward:.2f}")
-        plot_results(hyperparameters, loss_history, avg_reward_history, mean_reward, experiment_dir)
+        #plot_results(hyperparameters, loss_history, avg_reward_history, mean_reward, experiment_dir)
 
         model_path = os.path.join(experiment_dir, "model.pth")
         torch.save(model.state_dict(), model_path)
@@ -853,7 +1163,10 @@ hyperparameter_space = {
     "epsilon_decay": [0.999985, 0.99993],
     "gamma": [0.99],
 }
- 
+
+
+
+
 
 NUMBER_OF_REWARDS_TO_AVERAGE = 10
 

@@ -1,0 +1,37 @@
+2024-12-05 20:52:00,275 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Current SDK version is 0.18.7
+2024-12-05 20:52:00,276 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Configure stats pid to 1794998
+2024-12-05 20:52:00,276 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Loading settings from /fhome/pmlai01/.config/wandb/settings
+2024-12-05 20:52:00,276 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Loading settings from /export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/wandb/settings
+2024-12-05 20:52:00,276 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-12-05 20:52:00,276 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'Pere/pereREINFORCE.py', 'program_abspath': '/export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/pereREINFORCE.py', 'program': 'pereREINFORCE.py'}
+2024-12-05 20:52:00,276 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-12-05 20:52:00,276 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-12-05 20:52:00,276 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-12-05 20:52:00,277 INFO    MainThread:1794998 [wandb_init.py:_log_setup():533] Logging user logs to /export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/wandb/run-20241205_205200-57vzotpf/logs/debug.log
+2024-12-05 20:52:00,277 INFO    MainThread:1794998 [wandb_init.py:_log_setup():534] Logging internal logs to /export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/wandb/run-20241205_205200-57vzotpf/logs/debug-internal.log
+2024-12-05 20:52:00,277 INFO    MainThread:1794998 [wandb_init.py:init():619] calling init triggers
+2024-12-05 20:52:00,277 INFO    MainThread:1794998 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.0001, 'architecture': 'REINFORCE', 'dataset': 'KABOOM', 'epochs': 2500}
+2024-12-05 20:52:00,277 INFO    MainThread:1794998 [wandb_init.py:init():664] wandb.init() called when a run is still active
+2024-12-05 22:07:20,793 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Current SDK version is 0.18.7
+2024-12-05 22:07:20,793 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Configure stats pid to 1794998
+2024-12-05 22:07:20,793 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Loading settings from /fhome/pmlai01/.config/wandb/settings
+2024-12-05 22:07:20,794 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Loading settings from /export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/wandb/settings
+2024-12-05 22:07:20,794 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-12-05 22:07:20,794 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'Pere/pereREINFORCE.py', 'program_abspath': '/export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/pereREINFORCE.py', 'program': 'pereREINFORCE.py'}
+2024-12-05 22:07:20,794 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-12-05 22:07:20,794 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-12-05 22:07:20,794 INFO    MainThread:1794998 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-12-05 22:07:20,795 INFO    MainThread:1794998 [wandb_init.py:_log_setup():533] Logging user logs to /export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/wandb/run-20241205_220720-ojo6nfn2/logs/debug.log
+2024-12-05 22:07:20,795 INFO    MainThread:1794998 [wandb_init.py:_log_setup():534] Logging internal logs to /export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/wandb/run-20241205_220720-ojo6nfn2/logs/debug-internal.log
+2024-12-05 22:07:20,795 INFO    MainThread:1794998 [wandb_init.py:init():619] calling init triggers
+2024-12-05 22:07:20,795 INFO    MainThread:1794998 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.0001, 'architecture': 'REINFORCE', 'dataset': 'KABOOM', 'epochs': 2500}
+2024-12-05 22:07:20,795 INFO    MainThread:1794998 [wandb_init.py:init():664] wandb.init() called when a run is still active
+2024-12-05 23:59:50,128 INFO    MainThread:1794998 [wandb_run.py:_finish():2155] finishing run peremayolc-universitat-aut-noma-de-barcelona/DEFINITIVE_TEST_KABOOOM/mkzjpz1z
+2024-12-05 23:59:50,130 INFO    MainThread:1794998 [wandb_run.py:_atexit_cleanup():2420] got exitcode: 0
+2024-12-05 23:59:50,131 INFO    MainThread:1794998 [wandb_run.py:_restore():2402] restore
+2024-12-05 23:59:50,131 INFO    MainThread:1794998 [wandb_run.py:_restore():2408] restore done
+2024-12-05 23:59:53,514 INFO    MainThread:1794998 [wandb_run.py:_footer_history_summary_info():3960] rendering history
+2024-12-05 23:59:53,536 INFO    MainThread:1794998 [wandb_run.py:_footer_history_summary_info():3992] rendering summary
+2024-12-05 23:59:53,561 INFO    MainThread:1794998 [wandb_run.py:_footer_sync_info():3921] logging synced files

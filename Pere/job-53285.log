@@ -1,0 +1,134 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: peremayolc (peremayolc-universitat-aut-noma-de-barcelona). Use `wandb login --relogin` to force relogin
+A.L.E: Arcade Learning Environment (version 0.10.1+unknown)
+[Powered by Stella]
+wandb: Tracking run with wandb version 0.18.7
+wandb: Run data is saved locally in /export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/wandb/run-20241205_131546-0avhlhqt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run REINFORCE-TEST(0.0001/0.99)
+wandb: ⭐️ View project at https://wandb.ai/peremayolc-universitat-aut-noma-de-barcelona/PROJECT_REINFORCE_KABOOM
+wandb: 🚀 View run at https://wandb.ai/peremayolc-universitat-aut-noma-de-barcelona/PROJECT_REINFORCE_KABOOM/runs/0avhlhqt
+cuda
+Standard Env Grayscaled: (210, 160)
+ResizeObservation    : (84, 84)
+ReshapeObservation   : (84, 84)
+FrameStackObservation: (4, 84, 84)
+ScaledFloatFrame     : (4, 84, 84)
+*** Wrapped Environment ***
+Environment obs. : (4, 84, 84)
+Observation shape: (4, 84, 84), type: float32 and range [0.0,0.6980392336845398]
+Observation sample:
+[[[0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  ...
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]]
+
+ [[0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  ...
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]]
+
+ [[0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  ...
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]]
+
+ [[0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  ...
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]
+  [0. 0. 0. ... 0. 0. 0.]]]
+Episode 0 | Total Reward: 3.00 | Rolling Avg Reward: 3.00 | Rolling Avg Loss: -0.2803
+Episode 10 | Total Reward: 2.00 | Rolling Avg Reward: 2.90 | Rolling Avg Loss: -0.5334
+Episode 20 | Total Reward: 2.00 | Rolling Avg Reward: 3.20 | Rolling Avg Loss: 0.3500
+Episode 30 | Total Reward: 2.00 | Rolling Avg Reward: 2.90 | Rolling Avg Loss: 0.0011
+Episode 40 | Total Reward: 0.00 | Rolling Avg Reward: 3.20 | Rolling Avg Loss: 3.4960
+Episode 50 | Total Reward: 2.00 | Rolling Avg Reward: 4.60 | Rolling Avg Loss: 1.9502
+Episode 60 | Total Reward: 3.00 | Rolling Avg Reward: 3.10 | Rolling Avg Loss: -1.5414
+Episode 70 | Total Reward: 2.00 | Rolling Avg Reward: 2.40 | Rolling Avg Loss: 3.6618
+Episode 80 | Total Reward: 3.00 | Rolling Avg Reward: 4.00 | Rolling Avg Loss: 0.0415
+Episode 90 | Total Reward: 7.00 | Rolling Avg Reward: 2.90 | Rolling Avg Loss: 0.3963
+Episode 100 | Total Reward: 2.00 | Rolling Avg Reward: 2.60 | Rolling Avg Loss: 1.0252
+Episode 110 | Total Reward: 3.00 | Rolling Avg Reward: 3.00 | Rolling Avg Loss: -2.0687
+Episode 120 | Total Reward: 3.00 | Rolling Avg Reward: 2.60 | Rolling Avg Loss: 0.7781
+Episode 130 | Total Reward: 5.00 | Rolling Avg Reward: 1.80 | Rolling Avg Loss: 1.5631
+Episode 140 | Total Reward: 7.00 | Rolling Avg Reward: 2.60 | Rolling Avg Loss: -0.5670
+Episode 150 | Total Reward: 2.00 | Rolling Avg Reward: 3.70 | Rolling Avg Loss: 4.1476
+Episode 160 | Total Reward: 6.00 | Rolling Avg Reward: 2.80 | Rolling Avg Loss: 1.9963
+Episode 170 | Total Reward: 0.00 | Rolling Avg Reward: 3.70 | Rolling Avg Loss: 3.1351
+Episode 180 | Total Reward: 3.00 | Rolling Avg Reward: 3.90 | Rolling Avg Loss: -0.3263
+Episode 190 | Total Reward: 4.00 | Rolling Avg Reward: 3.90 | Rolling Avg Loss: 2.0555
+Episode 200 | Total Reward: 1.00 | Rolling Avg Reward: 3.30 | Rolling Avg Loss: 0.6615
+Episode 210 | Total Reward: 2.00 | Rolling Avg Reward: 3.50 | Rolling Avg Loss: 1.8900
+Episode 220 | Total Reward: 4.00 | Rolling Avg Reward: 4.40 | Rolling Avg Loss: 0.1266
+Episode 230 | Total Reward: 2.00 | Rolling Avg Reward: 4.30 | Rolling Avg Loss: 1.9292
+Episode 240 | Total Reward: 1.00 | Rolling Avg Reward: 4.30 | Rolling Avg Loss: 0.5151
+Episode 250 | Total Reward: 1.00 | Rolling Avg Reward: 3.30 | Rolling Avg Loss: -0.0222
+Episode 260 | Total Reward: 0.00 | Rolling Avg Reward: 2.40 | Rolling Avg Loss: -3.6258
+Episode 270 | Total Reward: 2.00 | Rolling Avg Reward: 1.70 | Rolling Avg Loss: 7.9566
+Episode 280 | Total Reward: 0.00 | Rolling Avg Reward: 1.90 | Rolling Avg Loss: -1.4378
+Episode 290 | Total Reward: 4.00 | Rolling Avg Reward: 3.10 | Rolling Avg Loss: 6.7803
+Episode 300 | Total Reward: 6.00 | Rolling Avg Reward: 4.00 | Rolling Avg Loss: -1.7560
+Episode 310 | Total Reward: 10.00 | Rolling Avg Reward: 5.00 | Rolling Avg Loss: 1.3802
+Episode 320 | Total Reward: 2.00 | Rolling Avg Reward: 3.60 | Rolling Avg Loss: 1.4011
+Episode 330 | Total Reward: 3.00 | Rolling Avg Reward: 5.00 | Rolling Avg Loss: -0.3026
+Episode 340 | Total Reward: 4.00 | Rolling Avg Reward: 5.10 | Rolling Avg Loss: 0.0742
+Episode 350 | Total Reward: 4.00 | Rolling Avg Reward: 5.20 | Rolling Avg Loss: 0.3826
+Episode 360 | Total Reward: 1.00 | Rolling Avg Reward: 3.70 | Rolling Avg Loss: -0.3470
+Episode 370 | Total Reward: 4.00 | Rolling Avg Reward: 3.50 | Rolling Avg Loss: 1.2359
+Episode 380 | Total Reward: 2.00 | Rolling Avg Reward: 4.20 | Rolling Avg Loss: 0.0168
+Episode 390 | Total Reward: 2.00 | Rolling Avg Reward: 3.10 | Rolling Avg Loss: 0.4885
+Episode 400 | Total Reward: 9.00 | Rolling Avg Reward: 3.50 | Rolling Avg Loss: -0.0394
+Episode 410 | Total Reward: 3.00 | Rolling Avg Reward: 3.40 | Rolling Avg Loss: -1.1979
+Episode 420 | Total Reward: 4.00 | Rolling Avg Reward: 3.50 | Rolling Avg Loss: -0.4365
+Episode 430 | Total Reward: 4.00 | Rolling Avg Reward: 4.10 | Rolling Avg Loss: 1.8209
+Episode 440 | Total Reward: 4.00 | Rolling Avg Reward: 4.30 | Rolling Avg Loss: -0.0096
+Episode 450 | Total Reward: 3.00 | Rolling Avg Reward: 3.20 | Rolling Avg Loss: -0.4728
+Episode 460 | Total Reward: 7.00 | Rolling Avg Reward: 4.20 | Rolling Avg Loss: 1.1568
+Episode 470 | Total Reward: 8.00 | Rolling Avg Reward: 4.70 | Rolling Avg Loss: -0.2285
+Episode 480 | Total Reward: 3.00 | Rolling Avg Reward: 2.90 | Rolling Avg Loss: -0.6514
+Episode 490 | Total Reward: 3.00 | Rolling Avg Reward: 3.70 | Rolling Avg Loss: 5.2659
+Episode 500 | Total Reward: 3.00 | Rolling Avg Reward: 3.00 | Rolling Avg Loss: -0.3959
+Episode 510 | Total Reward: 5.00 | Rolling Avg Reward: 3.80 | Rolling Avg Loss: 0.5440
+Episode 520 | Total Reward: 3.00 | Rolling Avg Reward: 3.50 | Rolling Avg Loss: 3.2736
+Episode 530 | Total Reward: 6.00 | Rolling Avg Reward: 4.40 | Rolling Avg Loss: 1.4688
+Episode 540 | Total Reward: 5.00 | Rolling Avg Reward: 3.60 | Rolling Avg Loss: 4.1687
+Episode 550 | Total Reward: 5.00 | Rolling Avg Reward: 4.10 | Rolling Avg Loss: -0.6041
+Episode 560 | Total Reward: 7.00 | Rolling Avg Reward: 4.00 | Rolling Avg Loss: 4.7250
+Episode 570 | Total Reward: 7.00 | Rolling Avg Reward: 6.40 | Rolling Avg Loss: 0.5916
+Episode 580 | Total Reward: 9.00 | Rolling Avg Reward: 5.70 | Rolling Avg Loss: 0.4104
+Episode 590 | Total Reward: 4.00 | Rolling Avg Reward: 4.90 | Rolling Avg Loss: 2.1670
+Episode 600 | Total Reward: 0.00 | Rolling Avg Reward: 3.40 | Rolling Avg Loss: 0.9392
+Episode 610 | Total Reward: 4.00 | Rolling Avg Reward: 4.50 | Rolling Avg Loss: 0.7845
+Episode 620 | Total Reward: 6.00 | Rolling Avg Reward: 5.10 | Rolling Avg Loss: 5.8911
+Episode 630 | Total Reward: 11.00 | Rolling Avg Reward: 7.00 | Rolling Avg Loss: -0.1117
+Episode 640 | Total Reward: 2.00 | Rolling Avg Reward: 3.30 | Rolling Avg Loss: -0.1039
+Episode 650 | Total Reward: 5.00 | Rolling Avg Reward: 3.70 | Rolling Avg Loss: 0.7565
+Episode 660 | Total Reward: 5.00 | Rolling Avg Reward: 4.60 | Rolling Avg Loss: -0.1248
+Episode 670 | Total Reward: 5.00 | Rolling Avg Reward: 7.10 | Rolling Avg Loss: -0.0826
+Episode 680 | Total Reward: 4.00 | Rolling Avg Reward: 4.80 | Rolling Avg Loss: 0.9340
+Episode 690 | Total Reward: 2.00 | Rolling Avg Reward: 5.40 | Rolling Avg Loss: 1.7306
+Episode 700 | Total Reward: 2.00 | Rolling Avg Reward: 2.80 | Rolling Avg Loss: -1.7106
+Episode 710 | Total Reward: 4.00 | Rolling Avg Reward: 6.50 | Rolling Avg Loss: -1.5193
+Episode 720 | Total Reward: 3.00 | Rolling Avg Reward: 8.10 | Rolling Avg Loss: 1.2110
+Episode 730 | Total Reward: 6.00 | Rolling Avg Reward: 4.20 | Rolling Avg Loss: -0.2775
+Episode 740 | Total Reward: 11.00 | Rolling Avg Reward: 6.20 | Rolling Avg Loss: 5.0361
+Episode 750 | Total Reward: 10.00 | Rolling Avg Reward: 6.00 | Rolling Avg Loss: -1.7550
+Episode 760 | Total Reward: 6.00 | Rolling Avg Reward: 5.90 | Rolling Avg Loss: -1.4159
+Episode 770 | Total Reward: 7.00 | Rolling Avg Reward: 7.40 | Rolling Avg Loss: -4.5155
+Episode 780 | Total Reward: 7.00 | Rolling Avg Reward: 3.20 | Rolling Avg Loss: -2.5485
+Episode 790 | Total Reward: 2.00 | Rolling Avg Reward: 2.40 | Rolling Avg Loss: -3.6375
+Episode 800 | Total Reward: 2.00 | Rolling Avg Reward: 2.30 | Rolling Avg Loss: 9.8120
+Episode 810 | Total Reward: 2.00 | Rolling Avg Reward: 2.40 | Rolling Avg Loss: 8.5505
+slurmstepd: error: *** JOB 53285 ON etse-75-51 CANCELLED AT 2024-12-05T14:15:43 DUE TO TIME LIMIT ***

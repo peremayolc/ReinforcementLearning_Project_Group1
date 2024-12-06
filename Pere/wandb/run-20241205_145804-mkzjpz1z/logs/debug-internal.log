@@ -1,0 +1,18 @@
+{"time":"2024-12-05T14:58:04.782921139+01:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-12-05T14:58:04.782956432+01:00","level":"INFO","msg":"created symlink","path":"/export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/wandb/run-20241205_145804-mkzjpz1z/logs/debug-core.log"}
+{"time":"2024-12-05T14:58:04.898121326+01:00","level":"INFO","msg":"created new stream","id":"mkzjpz1z"}
+{"time":"2024-12-05T14:58:04.898194602+01:00","level":"INFO","msg":"stream: started","id":"mkzjpz1z"}
+{"time":"2024-12-05T14:58:04.898272033+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"mkzjpz1z"}
+{"time":"2024-12-05T14:58:04.898450137+01:00","level":"INFO","msg":"handler: started","stream_id":"mkzjpz1z"}
+{"time":"2024-12-05T14:58:04.898479807+01:00","level":"INFO","msg":"sender: started","stream_id":"mkzjpz1z"}
+{"time":"2024-12-05T14:58:06.168501146+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-05T16:17:08.504342587+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2024-12-05T23:59:50.144059507+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-05T23:59:50.153618547+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-05T23:59:51.138807345+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.726706707,"subtasks":[{"desc":"requirements.frozen.txt","runtime_seconds":0.083567082,"progress":"3.6KB/3.6KB"},{"desc":"wandb-job.json","runtime_seconds":0.083551147,"progress":"757B/757B"}]}],"total_operations":1}}
+{"time":"2024-12-05T23:59:52.218478619+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-05T23:59:53.563733804+01:00","level":"INFO","msg":"stream: closing","id":"mkzjpz1z"}
+{"time":"2024-12-05T23:59:53.563771352+01:00","level":"INFO","msg":"handler: closed","stream_id":"mkzjpz1z"}
+{"time":"2024-12-05T23:59:53.563795748+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"mkzjpz1z"}
+{"time":"2024-12-05T23:59:53.563873212+01:00","level":"INFO","msg":"sender: closed","stream_id":"mkzjpz1z"}
+{"time":"2024-12-05T23:59:53.563885089+01:00","level":"INFO","msg":"stream: closed","id":"mkzjpz1z"}

@@ -1,0 +1,8 @@
+{"time":"2024-12-05T13:15:46.032000124+01:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-12-05T13:15:46.032026599+01:00","level":"INFO","msg":"created symlink","path":"/export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/wandb/run-20241205_131546-0avhlhqt/logs/debug-core.log"}
+{"time":"2024-12-05T13:15:46.149170023+01:00","level":"INFO","msg":"created new stream","id":"0avhlhqt"}
+{"time":"2024-12-05T13:15:46.149225164+01:00","level":"INFO","msg":"stream: started","id":"0avhlhqt"}
+{"time":"2024-12-05T13:15:46.149769543+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"0avhlhqt"}
+{"time":"2024-12-05T13:15:46.149948035+01:00","level":"INFO","msg":"handler: started","stream_id":"0avhlhqt"}
+{"time":"2024-12-05T13:15:46.149971778+01:00","level":"INFO","msg":"sender: started","stream_id":"0avhlhqt"}
+{"time":"2024-12-05T13:15:46.692524754+01:00","level":"INFO","msg":"Starting system monitor"}

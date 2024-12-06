@@ -1,0 +1,17 @@
+{"time":"2024-12-06T16:05:48.43023593+01:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-12-06T16:05:48.430268205+01:00","level":"INFO","msg":"created symlink","path":"/export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/TEST2/wandb/run-20241206_160548-cj7bmm16/logs/debug-core.log"}
+{"time":"2024-12-06T16:05:48.551859955+01:00","level":"INFO","msg":"created new stream","id":"cj7bmm16"}
+{"time":"2024-12-06T16:05:48.552114664+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"cj7bmm16"}
+{"time":"2024-12-06T16:05:48.552449705+01:00","level":"INFO","msg":"handler: started","stream_id":"cj7bmm16"}
+{"time":"2024-12-06T16:05:48.552487485+01:00","level":"INFO","msg":"sender: started","stream_id":"cj7bmm16"}
+{"time":"2024-12-06T16:05:48.552053753+01:00","level":"INFO","msg":"stream: started","id":"cj7bmm16"}
+{"time":"2024-12-06T16:05:48.926846562+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-06T16:29:20.488163408+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-06T16:29:20.489348964+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-06T16:29:21.445443423+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.653292951,"subtasks":[{"desc":"requirements.frozen.txt","runtime_seconds":0.005938568,"progress":"3.6KB/3.6KB"},{"desc":"wandb-job.json","runtime_seconds":0.005920611,"progress":"603B/603B"}]}],"total_operations":1}}
+{"time":"2024-12-06T16:29:23.008519281+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-06T16:29:24.237142131+01:00","level":"INFO","msg":"stream: closing","id":"cj7bmm16"}
+{"time":"2024-12-06T16:29:24.237170338+01:00","level":"INFO","msg":"handler: closed","stream_id":"cj7bmm16"}
+{"time":"2024-12-06T16:29:24.237185476+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"cj7bmm16"}
+{"time":"2024-12-06T16:29:24.23727514+01:00","level":"INFO","msg":"sender: closed","stream_id":"cj7bmm16"}
+{"time":"2024-12-06T16:29:24.237287688+01:00","level":"INFO","msg":"stream: closed","id":"cj7bmm16"}

@@ -7,13 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1RcHu2YklENzmmZoneoEEn33snudceY8Y
 """
 
-#install everything needed.
-!pip install gymnasium
-!pip install gymnasium[atari]
-!pip install ale-py
-!pip install swig
-!pip install box2d-py
-!pip install torch
 
 import torch
 import torch.nn as nn
@@ -279,9 +272,9 @@ class policy_net(nn.Module):
         action_probs = torch.softmax(logits, dim=-1)
         return action_probs
 
-class REINFORCE_Agent:
+"""class REINFORCE_Agent:
     def __init__(self, env, policy_net, optimizer, gamma=0.99):
-        """
+        '''
         Initialize the REINFORCE agent.
 
         Args:
@@ -289,7 +282,7 @@ class REINFORCE_Agent:
             policy_net: Neural network that outputs action probabilities.
             optimizer: Optimizer for updating the policy network.
             gamma: Discount factor for cumulative rewards.
-        """
+        '''
         self.env = env  # Environment
         self.policy_net = policy_net  # Policy network
         self.optimizer = optimizer  # Optimizer for policy network
@@ -297,19 +290,19 @@ class REINFORCE_Agent:
         self._reset()  # Reset agent state
 
     def _reset(self):
-        """Resets the agent's current state by resetting the environment."""
+        '''Resets the agent's current state by resetting the environment.'''
         self.current_state, _ = self.env.reset()
         self.total_reward = 0.0
         self.log_probs = []  # Store log probabilities of actions
         self.rewards = []  # Store rewards obtained
 
     def step(self):
-        """
+        '''
         Perform a single step in the environment, choosing an action based on the policy network.
 
         Returns:
             done_reward (float or None): Total reward if the episode ends; otherwise, None.
-        """
+        '''
         done_reward = None
 
         # Preprocess the state for the policy network
@@ -340,9 +333,9 @@ class REINFORCE_Agent:
         return done_reward
 
     def _update_policy(self):
-        """
+        '''
         Updates the policy network using the REINFORCE algorithm.
-        """
+        '''
         # Compute discounted rewards
         discounted_rewards = []
         G = 0
@@ -365,6 +358,8 @@ class REINFORCE_Agent:
         policy_loss.backward()
         self.optimizer.step()
 
+"""
+
 def train_reinforce(env, policy_net, optimizer, gamma, DEVICE):
     """
     Train a REINFORCE agent in the given environment.
@@ -381,9 +376,19 @@ def train_reinforce(env, policy_net, optimizer, gamma, DEVICE):
         total_rewards: List of total rewards per episode.
         avg_reward_history: List of average rewards over time.
     """
-
-    max_episodes = 10
+    max_episodes = 1000
     target_reward = 20
+
+    wandb.init(
+        project="PERE-DEFINITVE-TEST",
+        config={
+            "learning_rate": learning_rate,
+            "gamma": gamma,
+            "target_reward": target_reward,
+            "number_of_episodes": max_episodes,
+            "number_of_rewards_to_average": 10,
+        }
+    )
 
     total_rewards = []
     avg_reward_history = []
@@ -441,16 +446,19 @@ def train_reinforce(env, policy_net, optimizer, gamma, DEVICE):
       avg_reward_history.append(mean_reward)
 
       print(f"Episode {episode}: Total Reward = {total_reward}, Mean Reward 10 episodes= {mean_reward:.3f} Loss: {policy_loss:.3f}")
+      wandb.log=({"MEAN REWARD 10 episodes":mean_reward,"TOTAL REWARD PER EPISODE":total_reward, "LOSS":policy_loss})
 
       if mean_reward >= target_reward:
           print(f"Target reward achieved! Solved in {episode + 1} episodes.")
           break
 
-
+    wandb.finish()
     return policy_net, total_rewards, avg_reward_history
 
 env = gym.make("ALE/Kaboom-v5", obs_type="grayscale")
 env = make_env(env)
+
+wandb.login()
 
 # Device Configuration
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -459,13 +467,12 @@ print(f"Using device: {device}")
 # Policy Network and Optimizer
 input_shape = env.observation_space.shape
 action_dim = env.action_space.n
-policy_net_model = policy_net(input_shape, action_dim).to(device)
-
 gammas=[0.99,0.95]
 lrs =[5e-5, 1e-4]
 
 for learning_rate in lrs:
   for gamma in gammas:
+    policy_net_model = policy_net(input_shape, action_dim).to(device)
     optimizer = optim.Adam(policy_net_model.parameters(), lr=learning_rate)
     print("Training the REINFORCE Agent...")
     trained_policy, total_rewards, avg_reward_history = train_reinforce(

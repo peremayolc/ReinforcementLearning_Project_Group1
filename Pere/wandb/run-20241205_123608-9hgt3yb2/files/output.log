@@ -1,6 +1,0 @@
-pereREINFORCE.py:118: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:278.)
-  state_tensor = torch.tensor([self.current_state], dtype=torch.float32).to(device)
-Episode 0 | Total Reward: 4.00 | Rolling Avg Reward: 4.00 | Rolling Avg Loss: -1.3991
-Episode 10 | Total Reward: 8.00 | Rolling Avg Reward: 3.10 | Rolling Avg Loss: 6.6120
-Episode 20 | Total Reward: 3.00 | Rolling Avg Reward: 3.70 | Rolling Avg Loss: 0.9508
-Episode 30 | Total Reward: 5.00 | Rolling Avg Reward: 4.90 | Rolling Avg Loss: -0.0311

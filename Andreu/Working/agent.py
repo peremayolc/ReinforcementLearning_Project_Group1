@@ -82,4 +82,4 @@ class Agent:
         if is_done:
             done_reward = self.total_reward
             self._reset()
-        return reward, done_reward
+        return reward, is_done, done_reward

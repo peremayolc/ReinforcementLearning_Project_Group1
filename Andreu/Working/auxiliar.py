@@ -4,7 +4,6 @@ import os  # For file system operations
 import json  # For saving data as JSON
 from wrappers import (  # Import custom environment wrappers
     MaxAndSkipEnv,
-    FireResetEnv,
     ProcessFrame84,
     EnhancedRewardWrapper,
     BufferWrapper,

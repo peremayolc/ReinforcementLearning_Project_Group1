@@ -26,20 +26,7 @@ class EnvCompatibility(gym.Wrapper):
             # Assume info is an empty dict if not provided
             return results, {}
 
-class FireResetEnv(gym.Wrapper):
-    def reset(self, **kwargs):
-        obs, info = self.env.reset(**kwargs)
-        # Perform FIRE action if needed at the start
-        obs, reward, terminated, truncated, info = self.env.step(1)
-        if terminated or truncated:
-            obs, info = self.env.reset(**kwargs)
-        return obs, info
 
-    def step(self, action):
-        # Do not step twice here
-        return self.env.step(action)
-
-    
 class MaxAndSkipEnv(gym.Wrapper):
     def __init__(self, env=None, skip=4):
         super(MaxAndSkipEnv, self).__init__(env)
@@ -174,6 +161,7 @@ class EnhancedRewardWrapper(gym.Wrapper):
 
     def step(self, action):
         obs, reward, terminated, truncated, info = self.env.step(action)
+
         total_reward = 0.0
         self.real_reward += reward 
           # Corrected to print actual reward
@@ -192,15 +180,18 @@ class EnhancedRewardWrapper(gym.Wrapper):
             print(f"Explosion detected! Lives remaining: {self.lives}")
 
             if self.lives > 0:
-                # Reset to mid-level if life is lost
+                # We want to continue playing, so override termination signals
+                terminated = False
+                truncated = False
                 self.reset_to_mid_level()
                 print(f"Life lost. Resuming mid-level at bomb count: {self.bombs_cleared}")
-                # Override terminated flag to prevent episode from ending
             else:
-                # Terminate episode if no lives left
+                terminated = True
+                # No lives left, end the episode
                 print("No lives left. Episode terminated.")
                 print('GAME SCORE: ', self.real_reward)
-                self.lives = self.initial_lives  # Reset lives for the next episode
+                
+
 
             self.explosion_timer = self.explosion_cooldown
             #print(f"Explosion Timer Reset to: {self.explosion_timer}")
@@ -302,15 +293,7 @@ def make_env(env):
     env = MaxAndSkipEnv(env)
     print("MaxAndSkipEnv        : {}".format(env.observation_space.shape))
     
-    # Apply EnhancedRewardWrapper with integrated FIRE action
-    env = EnhancedRewardWrapper(
-        env, 
-        initial_lives=3, 
-        penalty=-2, 
-        bonus=0.1,
-        level_ascend_reward=+3,
-        explosion_cooldown=7  # Adjust based on game mechanics
-    )
+    
     video_path = "./Andreu/Working/Runs/videos"
     os.makedirs(video_path, exist_ok=True)  # Ensure the directory exists
 
@@ -322,6 +305,16 @@ def make_env(env):
     )
 
     print("RecordVideo          : Applied")
+
+    # Apply EnhancedRewardWrapper with integrated FIRE action
+    env = EnhancedRewardWrapper(
+        env, 
+        initial_lives=3, 
+        penalty=-2, 
+        bonus=0.1,
+        level_ascend_reward=+3,
+        explosion_cooldown=7  # Adjust based on game mechanics
+    )
     
     env = ProcessFrame84(env)
     print("ProcessFrame84       : {}".format(env.observation_space.shape))
@@ -334,6 +327,8 @@ def make_env(env):
     
     env = EnvCompatibility(env)
     print("EnvCompatibility     : Applied")
+
+    
     
     return env
 

@@ -31,6 +31,7 @@ def train_model(env, hyperparameters, target_reward):
     # Initialize wandb for this run
     wandb.init(
         project="DQN_Kaboom",
+        dir='./ReinforcementLearning_Project_Group1/Andreu/Working/wandb',
         config={
             "learning_rate": learning_rate,
             "batch_size": batch_size,
@@ -69,9 +70,7 @@ def train_model(env, hyperparameters, target_reward):
         epsilon = max(epsilon * epsilon_decay, EPS_MIN)
     
         # Get immediate and cumulative rewards
-        immediate_reward, cumulative_reward = agent.step(net, epsilon=epsilon, device=device)
-
-        #print(f"Step: {frame_number} | Immediate Reward: {immediate_reward}")
+        immediate_reward, done, cumulative_reward = agent.step(net, epsilon=epsilon, device=device)
 
         # Log immediate reward to wandb
         wandb.log({
@@ -80,7 +79,7 @@ def train_model(env, hyperparameters, target_reward):
         })
 
         # If an episode ends, log cumulative reward
-        if cumulative_reward is not None:
+        if done:
             print('_______________________________Episode ', len(total_rewards)+1,' Ended with Cumulative Reward:______________________________', cumulative_reward)
             total_rewards.append(cumulative_reward)
 
@@ -94,13 +93,23 @@ def train_model(env, hyperparameters, target_reward):
                 "frame_number": frame_number,
             })
 
-            if len(total_rewards) % 10 == 0 or mean_reward > target_reward:
+            # Print progress every 100 episodes or if mean reward exceeds target_reward
+            if len(total_rewards) % 100 == 0 or mean_reward > target_reward:
                 print(f"Frame:{frame_number} | Total games:{len(total_rewards)} | Mean reward: {mean_reward:.3f} (epsilon: {epsilon:.2f})")
 
             avg_reward_history.append(mean_reward)
 
+            # Stop training if mean reward over last 10 episodes >= 1000
+            if mean_reward >= 1000:
+                print("Mean reward over the last 10 episodes reached 1000, stopping training.")
+                # Save the model
+                model_save_path = './trained_models/dqn_kaboom_best.pt'
+                torch.save(net.state_dict(), model_save_path)
+                print(f"Model saved to {model_save_path}")
+                break
+
             if mean_reward > target_reward:
-                #print(f"SOLVED in {frame_number} frames and {len(total_rewards)} games")
+                # Stop if target reward reached (if desired)
                 break
 
         if len(buffer) < batch_size:
@@ -159,9 +168,8 @@ def train_model(env, hyperparameters, target_reward):
     # Finish the wandb run
     wandb.finish()
 
-    
-
     return net, np.mean(total_rewards[-100:]), loss_history, avg_reward_history
+
 
     
 

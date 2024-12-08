@@ -1,0 +1,9 @@
+{"time":"2024-12-08T12:54:24.2031743+01:00","level":"INFO","msg":"using version","core version":"0.18.5"}
+{"time":"2024-12-08T12:54:24.2037034+01:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\agasc\\Desktop\\Andreu\\wandb\\run-20241208_125424-f3mcpukx\\logs\\debug-core.log"}
+{"time":"2024-12-08T12:54:24.6183327+01:00","level":"INFO","msg":"created new stream","id":"f3mcpukx"}
+{"time":"2024-12-08T12:54:24.6188592+01:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"f3mcpukx"}}
+{"time":"2024-12-08T12:54:24.6188592+01:00","level":"INFO","msg":"stream: started","id":"f3mcpukx"}
+{"time":"2024-12-08T12:54:24.6188592+01:00","level":"INFO","msg":"handler: started","stream_id":{"value":"f3mcpukx"}}
+{"time":"2024-12-08T12:54:24.6188592+01:00","level":"INFO","msg":"sender: started","stream_id":"f3mcpukx"}
+{"time":"2024-12-08T12:54:25.2008356+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-08T12:54:35.2026509+01:00","level":"ERROR","msg":"monitor: disk: error sampling metrics: Incorrect function."}

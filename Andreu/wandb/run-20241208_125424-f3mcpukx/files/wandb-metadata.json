@@ -1,0 +1,28 @@
+{
+  "os": "Windows-11-10.0.26100-SP0",
+  "python": "3.12.3",
+  "startedAt": "2024-12-08T11:54:24.186646Z",
+  "program": "c:\\Users\\agasc\\Desktop\\Andreu\\Working\\main.py",
+  "codePath": "Working\\main.py",
+  "email": "a.gasconmarzo@gmail.com",
+  "root": "C:\\Users\\agasc\\Desktop\\Andreu",
+  "host": "Andreu",
+  "username": "agasc",
+  "executable": "C:\\Users\\agasc\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "codePathLocal": "Working\\main.py",
+  "cpu_count": 4,
+  "cpu_count_logical": 8,
+  "disk": {
+    "/": {
+      "total": "495344152576",
+      "used": "133951934464"
+    }
+  },
+  "memory": {
+    "total": "7448702976"
+  },
+  "cpu": {
+    "count": 4,
+    "countLogical": 8
+  }
+}

@@ -1,0 +1,765 @@
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 1 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 2 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 3 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 4 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 5 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 6 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 7 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 8 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 9 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 10 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: True
+Explosion detected! Lives remaining: 2
+Life lost. Resuming mid-level at bomb count: 0
+Explosion Timer Reset to: 7
+Explosion Timer Decremented to: 6
+Modified Reward: -2.0 | Terminated: False | Truncated: False
+Step: 11 | Immediate Reward: -2.0
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 5
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 12 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 4
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 13 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 3
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 14 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 2
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 15 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 1
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 16 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 0
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 17 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 18 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 19 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 20 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 21 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 22 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 23 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 24 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 25 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 26 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 27 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 28 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 29 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 30 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: True
+Explosion detected! Lives remaining: 1
+Life lost. Resuming mid-level at bomb count: 0
+Explosion Timer Reset to: 7
+Explosion Timer Decremented to: 6
+Modified Reward: -2.0 | Terminated: False | Truncated: False
+Step: 31 | Immediate Reward: -2.0
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 5
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 32 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 4
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 33 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 3
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 34 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 2
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 35 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 1
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 36 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 0
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 37 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 38 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 39 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 40 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 41 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 42 | Immediate Reward: 0.1
+REAL GAME REWARD:  1.0
+Explosion Detected: False
+Bomb Caught! Total Bombs Cleared: 1
+Bonus Applied: 0.1
+Modified Reward: 1.1 | Terminated: False | Truncated: False
+Step: 43 | Immediate Reward: 1.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 44 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: True
+Explosion detected! Lives remaining: 0
+Uncleared bombs penalty applied: -1
+No lives left. Episode terminated.
+Explosion Timer Reset to: 7
+Explosion Timer Decremented to: 6
+Modified Reward: -3.0 | Terminated: True | Truncated: False
+Step: 45 | Immediate Reward: -3.0
+_______________________________Episode  0  Ended with Cumulative Reward:______________________________ -1.8
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 46 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 47 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 48 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 49 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 50 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 51 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 52 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 53 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 54 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 55 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: True
+Explosion detected! Lives remaining: 2
+Life lost. Resuming mid-level at bomb count: 0
+Explosion Timer Reset to: 7
+Explosion Timer Decremented to: 6
+Modified Reward: -2.0 | Terminated: False | Truncated: False
+Step: 56 | Immediate Reward: -2.0
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 5
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 57 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 4
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 58 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 3
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 59 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 2
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 60 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 1
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 61 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 0
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 62 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 63 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 64 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 65 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 66 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 67 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 68 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 69 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: True
+Explosion detected! Lives remaining: 1
+Life lost. Resuming mid-level at bomb count: 0
+Explosion Timer Reset to: 7
+Explosion Timer Decremented to: 6
+Modified Reward: -2.0 | Terminated: False | Truncated: False
+Step: 70 | Immediate Reward: -2.0
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 5
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 71 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 4
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 72 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 3
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 73 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 2
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 74 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 1
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 75 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 0
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 76 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 77 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 78 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 79 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 80 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 81 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 82 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: True
+Explosion detected! Lives remaining: 0
+No lives left. Episode terminated.
+Explosion Timer Reset to: 7
+Explosion Timer Decremented to: 6
+Modified Reward: -2.0 | Terminated: True | Truncated: False
+Step: 83 | Immediate Reward: -2.0
+_______________________________Episode  1  Ended with Cumulative Reward:______________________________ -2.5
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 84 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 85 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 86 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 87 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 88 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 89 | Immediate Reward: 0.1
+REAL GAME REWARD:  1.0
+Explosion Detected: False
+Bomb Caught! Total Bombs Cleared: 1
+Bonus Applied: 0.1
+Modified Reward: 1.1 | Terminated: False | Truncated: False
+Step: 90 | Immediate Reward: 1.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 91 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 92 | Immediate Reward: 0.1
+REAL GAME REWARD:  2.0
+Explosion Detected: False
+Bomb Caught! Total Bombs Cleared: 2
+Bonus Applied: 0.1
+Modified Reward: 2.1 | Terminated: False | Truncated: False
+Step: 93 | Immediate Reward: 2.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 94 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 95 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 96 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 97 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 98 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 99 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 100 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 101 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 102 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 103 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 104 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 105 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 106 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 107 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 108 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 109 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 110 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 111 | Immediate Reward: 0.1
+REAL GAME REWARD:  1.0
+Explosion Detected: False
+Bomb Caught! Total Bombs Cleared: 3
+Bonus Applied: 0.1
+Modified Reward: 1.1 | Terminated: False | Truncated: False
+Step: 112 | Immediate Reward: 1.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 113 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 114 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 115 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 116 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: True
+Explosion detected! Lives remaining: 2
+Uncleared bombs penalty applied: -1
+Life lost. Resuming mid-level at bomb count: 0
+Explosion Timer Reset to: 7
+Explosion Timer Decremented to: 6
+Modified Reward: -3.0 | Terminated: False | Truncated: False
+Step: 117 | Immediate Reward: -3.0
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 5
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 118 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 4
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 119 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 3
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 120 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 2
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 121 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 1
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 122 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 0
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 123 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 124 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 125 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 126 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 127 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 128 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 129 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 130 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 131 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 132 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 133 | Immediate Reward: 0.1
+REAL GAME REWARD:  1.0
+Explosion Detected: False
+Bomb Caught! Total Bombs Cleared: 1
+Bonus Applied: 0.1
+Modified Reward: 1.1 | Terminated: False | Truncated: False
+Step: 134 | Immediate Reward: 1.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 135 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 136 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 137 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 138 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 139 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 140 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: True
+Explosion detected! Lives remaining: 1
+Uncleared bombs penalty applied: -1
+Life lost. Resuming mid-level at bomb count: 0
+Explosion Timer Reset to: 7
+Explosion Timer Decremented to: 6
+Modified Reward: -3.0 | Terminated: False | Truncated: False
+Step: 141 | Immediate Reward: -3.0
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 5
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 142 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Timer Decremented to: 4
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: True | Truncated: False
+Step: 143 | Immediate Reward: 0.1
+_______________________________Episode  2  Ended with Cumulative Reward:______________________________ 4.799999999999983
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 144 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 145 | Immediate Reward: 0.1
+REAL GAME REWARD:  0.0
+Explosion Detected: False
+Bonus Applied: 0.1
+Modified Reward: 0.1 | Terminated: False | Truncated: False
+Step: 146 | Immediate Reward: 0.1

@@ -71,8 +71,7 @@ def train_model(env, hyperparameters, target_reward):
         # Get immediate and cumulative rewards
         immediate_reward, cumulative_reward = agent.step(net, epsilon=epsilon, device=device)
 
-
-        print(f"Step: {frame_number} | Immediate Reward: {immediate_reward}")
+        #print(f"Step: {frame_number} | Immediate Reward: {immediate_reward}")
 
         # Log immediate reward to wandb
         wandb.log({
@@ -82,7 +81,7 @@ def train_model(env, hyperparameters, target_reward):
 
         # If an episode ends, log cumulative reward
         if cumulative_reward is not None:
-            print('_______________________________Episode ', len(total_rewards),' Ended with Cumulative Reward:______________________________', cumulative_reward)
+            print('_______________________________Episode ', len(total_rewards)+1,' Ended with Cumulative Reward:______________________________', cumulative_reward)
             total_rewards.append(cumulative_reward)
 
             mean_reward = np.mean(total_rewards[-NUMBER_OF_REWARDS_TO_AVERAGE:])

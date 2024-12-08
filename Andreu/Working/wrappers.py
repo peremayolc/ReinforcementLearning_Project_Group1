@@ -145,6 +145,7 @@ class EnhancedRewardWrapper(gym.Wrapper):
         self.bombs_cleared = 0
         self.bomb_caught = False  # Track if a bomb was caught in the current level
         self.real_reward = 0
+        
 
         # Bomb counts per level based on the table
         self.level_bomb_counts = [10, 20, 30, 40, 50, 75, 100, 150]
@@ -161,6 +162,7 @@ class EnhancedRewardWrapper(gym.Wrapper):
         self.previous_frame = None
         self.real_reward = 0
 
+
         obs, info = self.env.reset(**kwargs)
         # Perform FIRE action
         obs, reward, terminated, truncated, info = self.env.step(self.fire_action)
@@ -173,9 +175,8 @@ class EnhancedRewardWrapper(gym.Wrapper):
     def step(self, action):
         obs, reward, terminated, truncated, info = self.env.step(action)
         total_reward = 0.0
-        episode_reward = 0
-        episode_reward += reward 
-        print('REAL GAME REWARD: ', reward)  # Corrected to print actual reward
+        self.real_reward += reward 
+          # Corrected to print actual reward
 
         # Process frame to detect explosion
         current_frame = self.preprocess_frame(obs)
@@ -195,12 +196,10 @@ class EnhancedRewardWrapper(gym.Wrapper):
                 self.reset_to_mid_level()
                 print(f"Life lost. Resuming mid-level at bomb count: {self.bombs_cleared}")
                 # Override terminated flag to prevent episode from ending
-                terminated = False
-                truncated = False
             else:
                 # Terminate episode if no lives left
-                terminated = True
                 print("No lives left. Episode terminated.")
+                print('GAME SCORE: ', self.real_reward)
                 self.lives = self.initial_lives  # Reset lives for the next episode
 
             self.explosion_timer = self.explosion_cooldown
@@ -312,16 +311,13 @@ def make_env(env):
         level_ascend_reward=+3,
         explosion_cooldown=7  # Adjust based on game mechanics
     )
-    print("EnhancedRewardWrapper: Applied")
-    
-    # Add RecordVideo wrapper
     video_path = "./Andreu/Working/Runs/videos"
     os.makedirs(video_path, exist_ok=True)  # Ensure the directory exists
-    
+
     env = RecordVideo(
         env,
         video_folder=video_path,
-        episode_trigger=lambda episode_id: (episode_id + 1) % 50 == 0,  # Records every 50 episodes
+        episode_trigger=lambda episode_id: True,  # Record every episode
         name_prefix="Kaboom_Episode"
     )
 

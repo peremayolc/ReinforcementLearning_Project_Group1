@@ -130,7 +130,7 @@ class ScaledFloatFrame(gym.ObservationWrapper):
 class EnhancedRewardWrapper(gym.Wrapper):
     def __init__(self, env, initial_lives, penalty, bonus,
                  level_ascend_reward,
-                 explosion_cooldown, uncleared_bomb_penalty=-1):
+                 explosion_cooldown):
         super(EnhancedRewardWrapper, self).__init__(env)
         self.initial_lives = initial_lives
         self.lives = initial_lives
@@ -138,7 +138,6 @@ class EnhancedRewardWrapper(gym.Wrapper):
         self.bonus = bonus
         self.level_ascend_reward = level_ascend_reward
         self.explosion_cooldown = explosion_cooldown
-        self.uncleared_bomb_penalty = uncleared_bomb_penalty
         self.explosion_timer = 0
         self.previous_frame = None
         self.previous_score = 0
@@ -174,7 +173,8 @@ class EnhancedRewardWrapper(gym.Wrapper):
     def step(self, action):
         obs, reward, terminated, truncated, info = self.env.step(action)
         total_reward = 0.0
-        self.real_reward += reward
+        episode_reward = 0
+        episode_reward += reward 
         print('REAL GAME REWARD: ', reward)  # Corrected to print actual reward
 
         # Process frame to detect explosion
@@ -184,17 +184,11 @@ class EnhancedRewardWrapper(gym.Wrapper):
         explosion = False
         if self.explosion_timer <= 0:
             explosion = self.detect_explosion(self.previous_frame, current_frame)
-            print(f"Explosion Detected: {explosion}")
 
         if explosion:
             self.lives -= 1
             total_reward += self.penalty
             print(f"Explosion detected! Lives remaining: {self.lives}")
-
-            # Apply penalty if bombs were caught but not cleared
-            if self.bomb_caught:
-                total_reward += self.uncleared_bomb_penalty
-                print(f"Uncleared bombs penalty applied: {self.uncleared_bomb_penalty}")
 
             if self.lives > 0:
                 # Reset to mid-level if life is lost
@@ -210,12 +204,12 @@ class EnhancedRewardWrapper(gym.Wrapper):
                 self.lives = self.initial_lives  # Reset lives for the next episode
 
             self.explosion_timer = self.explosion_cooldown
-            print(f"Explosion Timer Reset to: {self.explosion_timer}")
+            #print(f"Explosion Timer Reset to: {self.explosion_timer}")
 
         # Update explosion cooldown
         if self.explosion_timer > 0:
             self.explosion_timer -= 1
-            print(f"Explosion Timer Decremented to: {self.explosion_timer}")
+            #print(f"Explosion Timer Decremented to: {self.explosion_timer}")
 
         # Increment bombs cleared if a bomb was caught
         if reward > 0:  # Assuming catching a bomb gives a positive reward
@@ -225,12 +219,12 @@ class EnhancedRewardWrapper(gym.Wrapper):
 
         if not explosion:
             total_reward += self.bonus
-            print(f"Bonus Applied: {self.bonus}")
+            #print(f"Bonus Applied: {self.bonus}")
 
         # Check if all bombs in the current level are cleared
         if self.bombs_cleared == self.get_level_bomb_thresholds(self.current_level):
             total_reward += self.level_ascend_reward
-            print(f"Level Up! Ascended to Level {self.current_level}.")
+            print(f"-------------Level Up! Ascended to Level-------------- {self.current_level+1}.")
             self.bomb_caught = False  # Reset flag after clearing all bombs
 
         # Calculate the current level
@@ -246,13 +240,8 @@ class EnhancedRewardWrapper(gym.Wrapper):
         info['bombs_cleared'] = self.bombs_cleared
 
         modified_reward = reward + total_reward
-        print(f"Modified Reward: {modified_reward} | Terminated: {terminated} | Truncated: {truncated}")
+        #print(f"Modified Reward: {modified_reward} | Terminated: {terminated} | Truncated: {truncated}")
         return obs, modified_reward, terminated, truncated, info
-
-    # [Rest of the methods remain unchanged]
-
-
-    # [Rest of the methods remain unchanged]
 
 
     def calculate_level(self, bombs_cleared):
@@ -351,9 +340,6 @@ def make_env(env):
     print("EnvCompatibility     : Applied")
     
     return env
-
-
-
 
 
 def print_env_info(name, env):

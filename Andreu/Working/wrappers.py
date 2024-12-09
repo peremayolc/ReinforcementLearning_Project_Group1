@@ -4,6 +4,8 @@ import numpy as np  # Numerical operations
 import cv2  # Image processing
 import os
 from gymnasium.wrappers import RecordVideo
+import os
+import time
 
 # chekcs for compatibility of the step return                
 class EnvCompatibility(gym.Wrapper):
@@ -117,12 +119,14 @@ class ScaledFloatFrame(gym.ObservationWrapper):
 class EnhancedRewardWrapper(gym.Wrapper):
     def __init__(self, env, initial_lives, penalty, bonus,
                  level_ascend_reward,
-                 explosion_cooldown):
+                 explosion_cooldown,
+                 max_horizontal_distance=84):
         super(EnhancedRewardWrapper, self).__init__(env)
         self.initial_lives = initial_lives
         self.lives = initial_lives
         self.penalty = penalty
-        self.bonus = bonus
+        self.max_horizontal_distance = max_horizontal_distance
+
         self.level_ascend_reward = level_ascend_reward
         self.explosion_cooldown = explosion_cooldown
         self.explosion_timer = 0
@@ -132,10 +136,6 @@ class EnhancedRewardWrapper(gym.Wrapper):
         self.bombs_cleared = 0
         self.bomb_caught = False  # Track if a bomb was caught in the current level
         self.real_reward = 0
-        
-
-        # Bomb counts per level based on the table
-        self.level_bomb_counts = [10, 20, 30, 40, 50, 75, 100, 150]
 
         self.fire_action = 1  # Assuming action '1' is the FIRE action
 
@@ -161,10 +161,10 @@ class EnhancedRewardWrapper(gym.Wrapper):
 
     def step(self, action):
         obs, reward, terminated, truncated, info = self.env.step(action)
-
         total_reward = 0.0
         self.real_reward += reward 
           # Corrected to print actual reward
+
 
         # Process frame to detect explosion
         current_frame = self.preprocess_frame(obs)
@@ -175,23 +175,8 @@ class EnhancedRewardWrapper(gym.Wrapper):
             explosion = self.detect_explosion(self.previous_frame, current_frame)
 
         if explosion:
-            self.lives -= 1
             total_reward += self.penalty
-            print(f"Explosion detected! Lives remaining: {self.lives}")
-
-            if self.lives > 0:
-                # We want to continue playing, so override termination signals
-                terminated = False
-                truncated = False
-                self.reset_to_mid_level()
-                print(f"Life lost. Resuming mid-level at bomb count: {self.bombs_cleared}")
-            else:
-                terminated = True
-                # No lives left, end the episode
-                print("No lives left. Episode terminated.")
-                print('GAME SCORE: ', self.real_reward)
-                
-
+            print(f"Explosion detected!")
 
             self.explosion_timer = self.explosion_cooldown
             #print(f"Explosion Timer Reset to: {self.explosion_timer}")
@@ -207,21 +192,18 @@ class EnhancedRewardWrapper(gym.Wrapper):
             self.bomb_caught = True  # Set flag to True after the first bomb is caught
             print(f"Bomb Caught! Total Bombs Cleared: {self.bombs_cleared}")
 
-        if not explosion:
-            total_reward += self.bonus
-            #print(f"Bonus Applied: {self.bonus}")
 
-        # Check if all bombs in the current level are cleared
-        if self.bombs_cleared == self.get_level_bomb_thresholds(self.current_level):
-            total_reward += self.level_ascend_reward
-            print(f"-------------Level Up! Ascended to Level-------------- {self.current_level+1}.")
-            self.bomb_caught = False  # Reset flag after clearing all bombs
+         # Horizontal distance-based reward
+        bomb_positions, bucket_positions = self.extract_position(current_frame)
+        if not bomb_positions or not bucket_positions:
+            distance_reward = 0
+        else:
+            min_dist, _, _ = self.min_horizontal_distance(bomb_positions, bucket_positions)
+            distance_reward = self.compute_horizontal_distance_reward(min_dist)
+            print(f"Horizontal Distance Reward: {distance_reward:.2f}")
+            total_reward += distance_reward
 
-        # Calculate the current level
-        previous_level = self.current_level
-        self.current_level = self.calculate_level(self.bombs_cleared)
-        if self.current_level != previous_level:
-            print(f"Level Changed: {previous_level} -> {self.current_level}")
+
 
         self.previous_frame = current_frame
 
@@ -233,47 +215,27 @@ class EnhancedRewardWrapper(gym.Wrapper):
         #print(f"Modified Reward: {modified_reward} | Terminated: {terminated} | Truncated: {truncated}")
         return obs, modified_reward, terminated, truncated, info
 
-
-    def calculate_level(self, bombs_cleared):
-        """
-        Calculate the current level based on bombs cleared.
-        """
-        total_bombs = 0
-        for level, bomb_count in enumerate(self.level_bomb_counts, start=1):
-            total_bombs += bomb_count
-            if bombs_cleared < total_bombs:
-                return level
-        return len(self.level_bomb_counts)  # Max level if bombs cleared exceeds all thresholds
-
-    def reset_to_mid_level(self):
-        """
-        Resets the bombs cleared to the midpoint of the previous level.
-        """
-        if self.current_level > 1:
-            previous_level_bombs = sum(self.level_bomb_counts[:self.current_level - 1])
-            mid_level_bombs = previous_level_bombs + (self.level_bomb_counts[self.current_level - 2] // 2)
-            self.bombs_cleared = mid_level_bombs
-        else:
-            self.bombs_cleared = 0  # If Level 1, reset to the beginning
-
-    def get_level_bomb_thresholds(self, level):
-        """
-        Get the total bomb threshold for the given level.
-        """
-        return sum(self.level_bomb_counts[:level])
-
     def preprocess_frame(self, frame):
         """
         Preprocess the frame for explosion detection.
-        Convert to grayscale and resize if necessary.
+        Convert to grayscale, resize, and crop to 84x84.
         """
+        # Convert to grayscale if the frame has color channels
         if len(frame.shape) == 3 and frame.shape[2] == 3:
             gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
         elif len(frame.shape) == 2:
             gray = frame
         else:
             raise ValueError(f"Unexpected frame shape: {frame.shape}")
-        return cv2.resize(gray, (84, 84), interpolation=cv2.INTER_AREA)
+
+        # Resize the grayscale frame to (84, 110)
+        resized = cv2.resize(gray, (84, 110), interpolation=cv2.INTER_AREA)
+
+        # Crop the resized frame to (84, 84) by removing the top 18 pixels
+        cropped = resized[18:102, :]  # Rows 18 to 101 (inclusive), all columns
+
+        return cropped.astype(np.uint8)
+
 
     def detect_explosion(self, prev_frame, current_frame, threshold=50):
         """
@@ -282,7 +244,144 @@ class EnhancedRewardWrapper(gym.Wrapper):
         if prev_frame is None:
             return False
         diff = cv2.absdiff(current_frame, prev_frame)
-        return np.mean(diff) > threshold
+
+        explosion = np.mean(diff) > threshold
+        if explosion:
+            save_dir = './Andreu/Working/explosion/'
+            os.makedirs(save_dir, exist_ok=True)  # Creates the directory if it doesn't exist
+
+            # Generate a unique filename using the current time in milliseconds
+            timestamp = int(time.time() * 1000)  # Current time in milliseconds
+            filename = f"explosion_frame_{timestamp}.png"
+            filepath = os.path.join(save_dir, filename)
+            success = cv2.imwrite(filepath, diff)
+            return explosion
+        else:
+            return explosion
+
+    def extract_position(self, frame):
+        """
+        Updated function for detecting bombs and buckets, using different dilation kernels
+        for the top 70% and bottom 30% of the image.
+        """
+        bomb_positions = []
+        bucket_region = []
+
+        # Apply binary threshold
+        _, threshold = cv2.threshold(frame, 128, 255, cv2.THRESH_BINARY)
+
+        # Split the image into two regions
+        height, width = frame.shape
+        bottom_region_start = int(height * 0.7)  # Define the bottom 30% as the bucket region
+
+        # Top 70% dilation with a 2x2 kernel
+        top_threshold = threshold[:bottom_region_start, :]
+        kernel_top = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
+        dilated_top = cv2.dilate(top_threshold, kernel_top, iterations=1)
+
+        # Bottom 30% dilation with a 5x5 kernel
+        bottom_threshold = threshold[bottom_region_start:, :]
+        kernel_bottom = cv2.getStructuringElement(cv2.MORPH_RECT, (7, ))
+        dilated_bottom = cv2.dilate(bottom_threshold, kernel_bottom, iterations=1)
+
+        # Combine the two regions
+        dilated = np.vstack((dilated_top, dilated_bottom))
+
+        # Find contours in the combined dilated image
+        contours, _ = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+        # Create a copy of the frame to draw on
+        frame_with_contours = cv2.cvtColor(dilated, cv2.COLOR_GRAY2BGR)
+
+        # Process the bottom 30% for buckets
+        bucket_contours = []
+        for cnt in contours:
+            x, y, w, h = cv2.boundingRect(cnt)
+            # Check if the contour is in the bottom region
+            if y >= bottom_region_start:
+                bucket_contours.append(cnt)
+
+        # Create a single large bounding box that covers all bucket contours
+        if bucket_contours:
+            x_min = min(cv2.boundingRect(cnt)[0] for cnt in bucket_contours)
+            y_min = bottom_region_start  # Fixed to start at the bottom region
+            x_max = max(cv2.boundingRect(cnt)[0] + cv2.boundingRect(cnt)[2] for cnt in bucket_contours)
+            y_max = max(cv2.boundingRect(cnt)[1] + cv2.boundingRect(cnt)[3] for cnt in bucket_contours)
+
+            # Add the single bounding box for buckets
+            bucket_region = [(x_min, y_min), (x_max, y_max)]
+            # Draw a blue rectangle around the entire bucket region
+            cv2.rectangle(frame_with_contours, (x_min, y_min), (x_max, y_max), (255, 0, 0), 2)
+
+        # Process the rest of the frame for bombs
+        for cnt in contours:
+            x, y, w, h = cv2.boundingRect(cnt)
+            aspect_ratio = w / float(h)
+
+            # Detect bombs (outside the bottom region)
+            if y < bottom_region_start and 0.7 <= aspect_ratio <= 1.3 and 3 <= h <= 15 and 3 <= w <= 15:
+                bomb_positions.append((x + w // 2, y + h // 2))
+                # Draw a red rectangle around the bomb
+                cv2.rectangle(frame_with_contours, (x, y), (x + w, y + h), (0, 0, 255), 2)
+
+        # Define the directory where frames will be saved
+        save_dir = './Andreu/Working/position/'
+        os.makedirs(save_dir, exist_ok=True)  # Create the directory if it doesn't exist
+
+        # Generate a unique filename using the current time in milliseconds
+        timestamp = int(time.time() * 1000)  # Current time in milliseconds
+        filename_dilated = f"dilated_frame_{timestamp}.png"
+        filename_contours = f"contours_frame_{timestamp}.png"
+        filepath_dilated = os.path.join(save_dir, filename_dilated)
+        filepath_contours = os.path.join(save_dir, filename_contours)
+
+        # Save the dilated and contoured images for debugging
+        cv2.imwrite(filepath_dilated, dilated)
+        cv2.imwrite(filepath_contours, frame_with_contours)
+
+        return bomb_positions, bucket_region
+
+
+    
+
+
+
+# This function now includes color-coded contours (red for bombs, blue for buckets) in the saved output image. Let me know if you want to test it on a specific frame.
+
+
+
+
+    
+    def min_horizontal_distance(self, bomb_positions, bucket_positions):
+        """
+        Calculate the minimum horizontal distance between any bomb and any bucket.
+        Returns the minimum distance and the corresponding bomb and bucket positions.
+        """
+        min_dist = float('inf')
+        closest_bomb = None
+        closest_bucket = None
+
+        for bomb in bomb_positions:
+            for bucket in bucket_positions:
+                dist = abs(bomb[0] - bucket[0])  # Horizontal distance
+                if dist < min_dist:
+                    min_dist = dist
+                    closest_bomb = bomb
+                    closest_bucket = bucket
+
+        return min_dist, closest_bomb, closest_bucket
+        
+    
+    def compute_horizontal_distance_reward(self, min_dist):
+        """
+        Compute a reward based on the horizontal distance.
+        Closer distance yields higher reward.
+        """
+        # Normalize the distance
+        normalized_dist = min_dist / self.max_horizontal_distance  # Scale between 0 and 1
+        # Invert to make closer distances higher rewards
+        distance_reward = 1 - normalized_dist
+        return distance_reward
 
 
 
@@ -300,7 +399,7 @@ def make_env(env):
     env = RecordVideo(
         env,
         video_folder=video_path,
-        episode_trigger=lambda episode_id: True,  # Record every episode
+        episode_trigger=lambda episode_id: (episode_id% 100 ==0),  # Record every episode
         name_prefix="Kaboom_Episode"
     )
 

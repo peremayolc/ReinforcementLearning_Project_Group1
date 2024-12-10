@@ -5,7 +5,7 @@
 #SBATCH --mem=16G                 # Memory allocation
 #SBATCH --time=12:00:00           # Maximum runtime
 #SBATCH --output=job-%j.log       # Log file
-#SBATCH --job-name=gpu_test       # Job name
+#SBATCH --job-name=PPO       # Job name
 
 # Ensure Conda is set up
 source ~/miniconda3/etc/profile.d/conda.sh

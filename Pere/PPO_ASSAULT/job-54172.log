@@ -10262,3 +10262,24 @@ Wrapping the env in a VecTransposeImage.
 |    policy_gradient_loss | -0.00254     |
 |    value_loss           | 0.774        |
 ------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 1.68e+03     |
+|    ep_rew_mean          | 837          |
+| time/                   |              |
+|    fps                  | 196          |
+|    iterations           | 41           |
+|    time_elapsed         | 5132         |
+|    total_timesteps      | 1007616      |
+| train/                  |              |
+|    approx_kl            | 0.0037352524 |
+|    clip_fraction        | 0.0308       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.89        |
+|    explained_variance   | 0.874        |
+|    learning_rate        | 1e-05        |
+|    loss                 | 0.524        |
+|    n_updates            | 400          |
+|    policy_gradient_loss | -0.00285     |
+|    value_loss           | 0.927        |
+------------------------------------------

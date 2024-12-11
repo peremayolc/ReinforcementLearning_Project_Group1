@@ -1,0 +1,23 @@
+/var/spool/slurmd/job54627/slurm_script: línea 11: /fhome/pmlai01/miniconda3/etc/profile.d/cuonda.sh: No existe el archivo o el directorio
+
+CondaError: Run 'conda init' before 'conda activate'
+
+2024-12-11 16:01:47.113469: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2024-12-11 16:01:47.484233: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-12-11 16:01:49.094677: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+A.L.E: Arcade Learning Environment (version 0.10.1+unknown)
+[Powered by Stella]
+cuda
+Using cuda device
+Wrapping the env in a VecTransposeImage.
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 1.11e+03 |
+|    ep_rew_mean     | 222      |
+| time/              |          |
+|    fps             | 289      |
+|    iterations      | 1        |
+|    time_elapsed    | 28       |
+|    total_timesteps | 8192     |
+---------------------------------

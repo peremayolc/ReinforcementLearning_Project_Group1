@@ -14,4 +14,4 @@ source ~/miniconda3/etc/profile.d/cuonda.sh
 conda activate gpu_env
 
 # Run your Python script
-python kaboom_reinforce_scheduler.py
+python kaboom_reinforce_scheduler_test2.py

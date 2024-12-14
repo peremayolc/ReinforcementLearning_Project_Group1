@@ -46,7 +46,26 @@ from stable_baselines3.common.env_util import make_atari_env
 from stable_baselines3.common.vec_env import VecFrameStack
 from stable_baselines3.common.callbacks import BaseCallback
 
+class CustomRewardWrapper(gym.RewardWrapper):
+    def __init__(self, env):
+        super().__init__(env)
+        self.survival_bonus = 0.01
+        self.wave_cleared_bonus = 5.0  
+        self.min_reward = -1.0  
+        self.max_reward = 1.0   
+
+    def reward(self, reward):
+        reward += self.survival_bonus
+
+        if self.env.ale.getRAM()[3] == 0:  
+            reward += self.wave_cleared_bonus
+
+        reward = max(self.min_reward, min(reward, self.max_reward))
+        
+        return reward
+
 env = make_atari_env("Assault-v4", n_envs=4, seed=0)
+env = gym.vector.SyncVectorEnv([lambda: CustomRewardWrapper(env.envs[i].env) for i in range(env.num_envs)])
 env = VecFrameStack(env, n_stack=4)
 
 class RewardTrackingCallback(BaseCallback):

@@ -5,7 +5,7 @@
 #SBATCH --mem=16G                 # Memory allocation
 #SBATCH --time=24:00:00           # Maximum runtime
 #SBATCH --output=job-%j.log       # Log file
-#SBATCH --job-name=PPO_SCHEDULER       # Job name
+#SBATCH --job-name=PPO_FINAL      # Job name
 
 # Ensure Conda is set up
 source ~/miniconda3/etc/profile.d/cuonda.sh
@@ -14,4 +14,4 @@ source ~/miniconda3/etc/profile.d/cuonda.sh
 conda activate gpu_env
 
 # Run your Python script
-python assault_ppo_scheduler_test2.py
+python assault_ppo_scheduler_test3.py

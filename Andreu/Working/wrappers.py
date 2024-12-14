@@ -30,7 +30,7 @@ class EnvCompatibility(gym.Wrapper):
 
 
 class MaxAndSkipEnv(gym.Wrapper):
-    def __init__(self, env=None, skip=4):
+    def __init__(self, env=None, skip=8):
         super(MaxAndSkipEnv, self).__init__(env)
         self.obs_buffer = collections.deque(maxlen=2)  # Changed from _obs_buffer to obs_buffer
         self.skip = skip  # Changed from _skip to skip

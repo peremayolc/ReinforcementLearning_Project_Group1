@@ -14,4 +14,4 @@ source ~/miniconda3/etc/profile.d/conda.sh
 conda activate gpu_env
 
 # Run your Python script
-python peretest2.py
+python peretest3.py

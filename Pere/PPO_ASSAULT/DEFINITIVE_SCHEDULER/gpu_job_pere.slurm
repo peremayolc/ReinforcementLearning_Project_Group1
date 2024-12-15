@@ -14,4 +14,4 @@ source ~/miniconda3/etc/profile.d/cuonda.sh
 conda activate gpu_env
 
 # Run your Python script
-python assault_ppo_scheduler_test3.py
+python assault_ppo_scheduler_test3_longest.py

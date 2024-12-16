@@ -14,4 +14,4 @@ source ~/miniconda3/etc/profile.d/conda.sh
 conda activate gpu_env
 
 # Run your Python script
-python kaboom_reinforce.py
+python assault_first_trials.py

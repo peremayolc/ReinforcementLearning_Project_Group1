@@ -28,7 +28,7 @@ else:
     device = torch.device("cpu")
 print(device)
 
-#imports to use everything needed to train the model.
+#imports to use everything needed to train the model. Some of them are not needed.
 import warnings
 from typing import Any, ClassVar, Optional, TypeVar, Union, Type, Dict
 

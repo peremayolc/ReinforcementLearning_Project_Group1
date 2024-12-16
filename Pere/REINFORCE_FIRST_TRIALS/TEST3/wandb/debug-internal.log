@@ -1,0 +1,17 @@
+{"time":"2024-12-07T03:56:48.783275775+01:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-12-07T03:56:48.783298625+01:00","level":"INFO","msg":"created symlink","path":"/export/fhome/pmlai01/ReinforcementLearning_Project_Group1-2/Pere/TEST3/wandb/run-20241207_035648-l5t57gab/logs/debug-core.log"}
+{"time":"2024-12-07T03:56:48.894280202+01:00","level":"INFO","msg":"created new stream","id":"l5t57gab"}
+{"time":"2024-12-07T03:56:48.894331098+01:00","level":"INFO","msg":"stream: started","id":"l5t57gab"}
+{"time":"2024-12-07T03:56:48.895147202+01:00","level":"INFO","msg":"sender: started","stream_id":"l5t57gab"}
+{"time":"2024-12-07T03:56:48.895197762+01:00","level":"INFO","msg":"handler: started","stream_id":"l5t57gab"}
+{"time":"2024-12-07T03:56:48.895225329+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"l5t57gab"}
+{"time":"2024-12-07T03:56:49.151658195+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-07T06:20:31.381942778+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-07T06:20:31.38272107+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-07T06:20:32.38433823+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.555442237,"progress":"454.1KB/454.1KB"}],"total_operations":1}}
+{"time":"2024-12-07T06:20:32.538450949+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-07T06:20:33.749288223+01:00","level":"INFO","msg":"stream: closing","id":"l5t57gab"}
+{"time":"2024-12-07T06:20:33.749312492+01:00","level":"INFO","msg":"handler: closed","stream_id":"l5t57gab"}
+{"time":"2024-12-07T06:20:33.749326751+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"l5t57gab"}
+{"time":"2024-12-07T06:20:33.749383078+01:00","level":"INFO","msg":"sender: closed","stream_id":"l5t57gab"}
+{"time":"2024-12-07T06:20:33.749394151+01:00","level":"INFO","msg":"stream: closed","id":"l5t57gab"}

@@ -8,7 +8,6 @@ from IPython.display import display, Image as IPImage
 import time
 import numpy as np
 import collections
-import wandb
 import torch.optim as optim
 from torchsummary import summary
 from itertools import product
@@ -230,18 +229,6 @@ def train_reinforce(env, policy_net, optimizer, gamma, DEVICE):
     max_episodes = 6000
     target_reward = 20
     
-    #initiliaze the run in wieghts and biases.
-    wandb.init(
-        project="PERE-DEFINITVE-TEST",
-        config={
-            "learning_rate": learning_rate,
-            "gamma": gamma,
-            "target_reward": target_reward,
-            "number_of_episodes": max_episodes,
-            "number_of_rewards_to_average": 10,
-        }
-    )
-    
     #to store results along the way.
     total_rewards = []
     avg_reward_history = []
@@ -304,20 +291,16 @@ def train_reinforce(env, policy_net, optimizer, gamma, DEVICE):
       avg_reward_history.append(mean_reward)
 
       print(f"Episode {episode}: Total Reward = {total_reward}, Mean Reward 10 episodes= {mean_reward:.3f} Loss: {policy_loss:.3f}")
-      wandb.log=({"MEAN REWARD 10 episodes":mean_reward,"TOTAL REWARD PER EPISODE":total_reward, "LOSS":policy_loss})
-      #check if mean_reward is good enough.
+        #check if mean_reward is good enough.
       if mean_reward >= target_reward:
           print(f"Target reward achieved! Solved in {episode + 1} episodes.")
           break
-
-    wandb.finish()
     return policy_net, total_rewards, avg_reward_history
 
 #set the environment as Kaboom
 env = gym.make("ALE/Kaboom-v5", obs_type="grayscale")
 env = make_env(env)
 
-wandb.login()
 
 #configure device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

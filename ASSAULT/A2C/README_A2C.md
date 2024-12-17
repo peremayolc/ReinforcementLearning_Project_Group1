@@ -6,16 +6,14 @@
 
 #### For the A2C model used to solve the Assault environment, there are various important parts, including all the models, the videos of the trained final model and also the plots of the final model.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# THIS IS THE ONLY PART OF THE CODE THAT NEEDS TO BE RUN ALONG WITH THE VIDEOS, other files contain the same concepts but are simply trials for tuning the hyperparameters and checking needed parts of how the enviroment behaves. NEVERTHELESS, everything is portable so you can run any of the trial files if needed.
-## The [Folder](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/tree/main/ASSAULT/PPO_ASSAULT/FINAL) containing all files to train the final model.
-
-Here you can find the all files used and that resulted in the training process. 
-- The [PYTHON FILE](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/PPO_ASSAULT/FINAL/assault_ppo_scheduler_test3_longest.py) containing all the code used.
-- The [TRAINING PLOT](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/PPO_ASSAULT/FINAL/training_plot_long2048.png).
-- The [MODEL](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/PPO_ASSAULT/FINAL/ASSAULT_PPOlong2048.zip).
-- The [JOB FILE](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/PPO_ASSAULT/FINAL/job-55865.log) containing all the training process information saved along the way.
+Here you can find the all files and what they do. 
+- The [PYTHON FILE](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/A2Ctrain.py) containing all the code used.
+- The [VIDEO RECORDER](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/A2Cvisualize.py) records a video of certain length and certain timesteps.
+- The [EVALUATOR](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/A2Cevaluate.py) evaluates the model printing a list of rewards and the average reward, you decide the number of episodes.
+- The [PLOTS](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/plots.ipynb) is simply a notebook which was used to visualize the tensorboard JSON file (ep_len and ep_rew).
   
-Moreover, we can find a folder where the performance of the saved final model has been tested -> [FOLDER TEST VIDEOS](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/tree/main/ASSAULT/PPO_ASSAULT/FINAL_SCHEDULER_VIDEOS_TEST). Here we can find the [VIDEOS](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/tree/main/ASSAULT/PPO_ASSAULT/FINAL_SCHEDULER_VIDEOS_TEST/videos) for the trained and untrained model, for comparison and ensure good performance, along with the [PYTHON FILE](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/PPO_ASSAULT/FINAL_SCHEDULER_VIDEOS_TEST/TEST_PPOASSAULT.py) used to generate them.
+Moreover, we can find a folder where the performance of the saved final model has been tested -> [FOLDER TEST VIDEOS] 
+(https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/videos). 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

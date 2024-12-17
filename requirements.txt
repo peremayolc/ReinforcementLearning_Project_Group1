@@ -1,0 +1,10 @@
+ale_py==0.10.1
+gymnasium==1.0.0
+matplotlib==3.10.0
+numpy==2.2.0
+opencv_python==4.9.0.80
+pandas==2.2.3
+stable_baselines3==2.4.0
+torch==2.2.0
+torchsummary==1.5.1
+wandb==0.19.1

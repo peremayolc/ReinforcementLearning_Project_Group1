@@ -19,6 +19,7 @@ Moreover, we can find a folder where the performance of the saved final model ha
 
 Finally, we can also find 3 folders containing the plots of the final model (plots directly from tensorboard and one with matplotlib), the models trained and the logs of the 5.000.000 and 7.000.000 timesteps models:
 1. A folder containing the [PLOTS](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/plots), containing the training plots of the final model.
-2. A folder containing the [MODELS](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/models). Here there are 3 models, .
+2. A folder containing the [MODELS](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/models). Here there are 3 models, in the [A2C](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/models/A2C) folder we have the first trial with just 20.000 timesteps. In the [A2CCnnAssault](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/models/A2CCnnAssault) we have the 2 models trained in the cluster with their timesteps as name.
+3. A folder containing the [logs](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/logs) from tensorboard of both models (5.000.000 and 7.000.000 timesteps).
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

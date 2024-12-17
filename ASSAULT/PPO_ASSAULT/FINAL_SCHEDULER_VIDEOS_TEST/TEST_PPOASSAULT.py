@@ -12,7 +12,7 @@ from stable_baselines3.common.vec_env import VecFrameStack
 from stable_baselines3.common.env_util import make_atari_env
 from stable_baselines3.common.vec_env import VecVideoRecorder
 from stable_baselines3 import PPO
-
+import os
 #set the video folder and how many steps to take.
 video_folder = 'videos'
 video_length = 6000
@@ -28,8 +28,9 @@ env = VecVideoRecorder(env, video_folder,
                        record_video_trigger=lambda x: x == 0, video_length=video_length,
                        name_prefix=f"testtrained-")
 
-#load the best performing model.
-model_path = "/fhome/pmlai01/ReinforcementLearning_Project_Group1-5/Pere/PPO_ASSAULT/DEFINITIVE_SCHEDULER/ASSAULT_PPOlong2048.zip"
+#load the best performing model
+script_dir = os.path.dirname(os.path.realpath(__file__))  # Get directory of the script
+model_path = os.path.join(script_dir, "ASSAULT_PPOlong2048.zip")
 model = PPO.load(model_path, env=env)
 
 #generate first observation 

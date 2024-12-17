@@ -12,8 +12,7 @@ Here you can find the all files and what they do.
 - The [EVALUATOR](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/A2Cevaluation.py) evaluates the model printing a list of rewards and the average reward, you decide the number of episodes.
 - The [PLOT](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/plots.ipynb) is simply a notebook which was used to visualize the tensorboard JSON file (ep_len and ep_rew).
   
-Moreover, we can find a folder where the performance of the saved final model has been tested -> [FOLDER TEST VIDEOS] 
-(https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/videos). 
+Moreover, we can find a folder where the performance of the saved final model has been tested -> [videos](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/videos). 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

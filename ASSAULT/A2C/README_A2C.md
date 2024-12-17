@@ -7,18 +7,18 @@
 #### For the A2C model used to solve the Assault environment, there are various important parts, including all the models, the videos of the trained final model and also the plots of the final model.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Here you can find the all files and what they do. 
-- The [PYTHON FILE](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/A2Ctrain.py) containing all the code used to train the agent.
+- The [TRAINING FILE](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/A2Ctrain.py) containing all the code used to train the agent.
 - The [VIDEO RECORDER](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/A2Cvisualize.py) records a video of certain length and certain timesteps.
 - The [EVALUATOR](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/A2Cevaluation.py) evaluates the model printing a list of rewards and the average reward, you decide the number of episodes.
-- The [PLOTS](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/plots.ipynb) is simply a notebook which was used to visualize the tensorboard JSON file (ep_len and ep_rew).
+- The [PLOT](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/plots.ipynb) is simply a notebook which was used to visualize the tensorboard JSON file (ep_len and ep_rew).
   
 Moreover, we can find a folder where the performance of the saved final model has been tested -> [FOLDER TEST VIDEOS] 
 (https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/videos). 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Finally, we can also find two folders containing most of the trials done along the way, they are separated into two different folders:
-1. A folder containing the [INITIAL TRIALS](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/tree/main/ASSAULT/PPO_ASSAULT/FIRST_TRIALS), containing the training plots used to determine which the best hyperparameters were and before using the learning scheduler technique to avoid instability during training.
-2. A folder containing the [TRIALS USING LEARNING SCHEDULE](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/tree/main/ASSAULT/PPO_ASSAULT/TRIALS_SCHEDULER). Here there are two other models, those that came before the ultimate one and that started getting better and more stable results.
+Finally, we can also find 3 folders containing the plots of the final model (plots directly from tensorboard and one with matplotlib), the models trained and the logs of the 5.000.000 and 7.000.000 timesteps models:
+1. A folder containing the [PLOTS](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/plots), containing the training plots of the final model.
+2. A folder containing the [MODELS](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/A2C/models). Here there are 3 models, .
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

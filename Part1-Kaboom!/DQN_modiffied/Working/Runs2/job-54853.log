@@ -1,0 +1,288 @@
+A.L.E: Arcade Learning Environment (version 0.10.1+unknown)
+[Powered by Stella]
+/fhome/pmlai01/.local/lib/python3.8/site-packages/gymnasium/wrappers/rendering.py:283: UserWarning: [33mWARN: Overwriting existing videos at /export/fhome/pmlai01/DQN/Working/Runs2/videos folder (try specifying a different `video_folder` for the `RecordVideo` wrapper if this is not desired)[0m
+  logger.warn(
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: andreugaski (andreugaski-universitat-aut-noma-de-barcelona). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.18.7
+wandb: Run data is saved locally in /fhome/pmlai01/DQN/Working/wandb/wandb/run-20241212_145041-741sbijr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run daily-puddle-325
+wandb: ⭐️ View project at https://wandb.ai/andreugaski-universitat-aut-noma-de-barcelona/DQN_Kaboom
+wandb: 🚀 View run at https://wandb.ai/andreugaski-universitat-aut-noma-de-barcelona/DQN_Kaboom/runs/741sbijr
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: cumulative_reward █▇▃▅▄▂▂▁▇▅▅▁▅▁▄▅▇▄▅▁▃▄▄▁▃▄▃▂▄▆▃▅▂▅▅█▁▃▂▄
+wandb:           episode ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▄▄▅▅▅▅▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇█████
+wandb:           epsilon ██▇▇▇▇▇▆▆▆▆▆▆▆▆▅▅▅▅▅▄▄▄▄▃▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁
+wandb:      frame_number ▁▁▁▁▁▂▂▂▃▃▃▄▄▄▄▄▅▅▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇▇▇██
+wandb:  immediate_reward ▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              loss ▃▂▃▁█▄▃▂▂▃▇▄▅▃▅▃▄▃▂▇▃▄▁▂▅▆▃▁▂▂▆▃█▅▂▇▂▄▆▁
+wandb:       mean_reward ▅▃▃▁▄▄▅▂▁▂▂▂▃▅▆▅█▃▃▅▂▅▃▄▄▁▅▅▇▆▅▇▄▅▄▄▆▃▄▄
+wandb: 
+wandb: Run summary:
+wandb: cumulative_reward 3
+wandb:           episode 10000
+wandb:           epsilon 0.43897
+wandb:      frame_number 548880
+wandb:  immediate_reward 0
+wandb:              loss 0.05408
+wandb:       mean_reward 3.2
+wandb: 
+wandb: 🚀 View run daily-puddle-325 at: https://wandb.ai/andreugaski-universitat-aut-noma-de-barcelona/DQN_Kaboom/runs/741sbijr
+wandb: ⭐️ View project at: https://wandb.ai/andreugaski-universitat-aut-noma-de-barcelona/DQN_Kaboom
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /fhome/pmlai01/DQN/Working/wandb/wandb/run-20241212_145041-741sbijr/logs
+wandb: Tracking run with wandb version 0.18.7
+wandb: Run data is saved locally in /fhome/pmlai01/DQN/Working/wandb/wandb/run-20241212_181035-tv3iv7ke
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run devoted-salad-326
+wandb: ⭐️ View project at https://wandb.ai/andreugaski-universitat-aut-noma-de-barcelona/DQN_Kaboom
+wandb: 🚀 View run at https://wandb.ai/andreugaski-universitat-aut-noma-de-barcelona/DQN_Kaboom/runs/tv3iv7ke
+cuda
+1.0.0
+Standard Env.        : (210, 160)
+MaxAndSkipEnv        : (210, 160)
+RecordVideo          : Applied
+ProcessFrame84       : (84, 84)
+BufferWrapper        : (4, 84, 84)
+ScaledFloatFrame     : (4, 84, 84)
+EnvCompatibility     : Applied
+Experiment 1/2: {'learning_rate': 0.001, 'batch_size': 64, 'gamma': 0.99, 'epsilon_decay': 0.9999985, 'target_update_freq': 500}
+Frame:4823 | Total games:100 | Mean reward: 2.100 (epsilon: 0.99)
+Frame:9733 | Total games:200 | Mean reward: 2.900 (epsilon: 0.99)
+Frame:14686 | Total games:300 | Mean reward: 3.600 (epsilon: 0.98)
+Frame:19598 | Total games:400 | Mean reward: 2.800 (epsilon: 0.97)
+Frame:24628 | Total games:500 | Mean reward: 3.900 (epsilon: 0.96)
+Frame:29639 | Total games:600 | Mean reward: 2.100 (epsilon: 0.96)
+Frame:34769 | Total games:700 | Mean reward: 2.400 (epsilon: 0.95)
+Frame:39950 | Total games:800 | Mean reward: 2.800 (epsilon: 0.94)
+Frame:45075 | Total games:900 | Mean reward: 2.900 (epsilon: 0.93)
+Frame:50159 | Total games:1000 | Mean reward: 3.500 (epsilon: 0.93)
+Frame:55192 | Total games:1100 | Mean reward: 3.400 (epsilon: 0.92)
+Frame:60214 | Total games:1200 | Mean reward: 2.000 (epsilon: 0.91)
+Frame:65346 | Total games:1300 | Mean reward: 3.400 (epsilon: 0.91)
+Frame:70454 | Total games:1400 | Mean reward: 2.800 (epsilon: 0.90)
+Frame:75526 | Total games:1500 | Mean reward: 2.400 (epsilon: 0.89)
+Frame:80568 | Total games:1600 | Mean reward: 2.500 (epsilon: 0.89)
+Frame:85690 | Total games:1700 | Mean reward: 3.300 (epsilon: 0.88)
+Frame:90971 | Total games:1800 | Mean reward: 1.900 (epsilon: 0.87)
+Frame:96161 | Total games:1900 | Mean reward: 3.000 (epsilon: 0.87)
+Frame:101366 | Total games:2000 | Mean reward: 3.500 (epsilon: 0.86)
+Frame:106524 | Total games:2100 | Mean reward: 2.800 (epsilon: 0.85)
+Frame:111664 | Total games:2200 | Mean reward: 2.800 (epsilon: 0.85)
+Frame:116913 | Total games:2300 | Mean reward: 2.100 (epsilon: 0.84)
+Frame:122101 | Total games:2400 | Mean reward: 2.100 (epsilon: 0.83)
+Frame:127548 | Total games:2500 | Mean reward: 4.700 (epsilon: 0.83)
+Frame:132826 | Total games:2600 | Mean reward: 3.100 (epsilon: 0.82)
+Frame:138076 | Total games:2700 | Mean reward: 1.600 (epsilon: 0.81)
+Frame:143355 | Total games:2800 | Mean reward: 2.100 (epsilon: 0.81)
+Frame:148733 | Total games:2900 | Mean reward: 2.100 (epsilon: 0.80)
+Frame:154111 | Total games:3000 | Mean reward: 3.600 (epsilon: 0.79)
+Frame:159497 | Total games:3100 | Mean reward: 4.500 (epsilon: 0.79)
+Frame:164813 | Total games:3200 | Mean reward: 4.400 (epsilon: 0.78)
+Frame:170121 | Total games:3300 | Mean reward: 2.100 (epsilon: 0.77)
+Frame:175593 | Total games:3400 | Mean reward: 1.700 (epsilon: 0.77)
+Frame:180923 | Total games:3500 | Mean reward: 4.100 (epsilon: 0.76)
+Frame:186241 | Total games:3600 | Mean reward: 3.800 (epsilon: 0.76)
+Frame:191583 | Total games:3700 | Mean reward: 3.400 (epsilon: 0.75)
+Frame:197023 | Total games:3800 | Mean reward: 3.300 (epsilon: 0.74)
+Frame:202636 | Total games:3900 | Mean reward: 3.600 (epsilon: 0.74)
+Frame:208110 | Total games:4000 | Mean reward: 4.900 (epsilon: 0.73)
+Frame:213464 | Total games:4100 | Mean reward: 2.100 (epsilon: 0.73)
+Frame:218888 | Total games:4200 | Mean reward: 3.100 (epsilon: 0.72)
+Frame:224264 | Total games:4300 | Mean reward: 2.800 (epsilon: 0.71)
+Frame:229586 | Total games:4400 | Mean reward: 2.100 (epsilon: 0.71)
+Frame:235001 | Total games:4500 | Mean reward: 4.300 (epsilon: 0.70)
+Frame:240478 | Total games:4600 | Mean reward: 3.400 (epsilon: 0.70)
+Frame:245940 | Total games:4700 | Mean reward: 3.800 (epsilon: 0.69)
+Frame:251318 | Total games:4800 | Mean reward: 1.200 (epsilon: 0.69)
+Frame:256913 | Total games:4900 | Mean reward: 2.400 (epsilon: 0.68)
+Frame:262289 | Total games:5000 | Mean reward: 3.500 (epsilon: 0.67)
+Frame:267938 | Total games:5100 | Mean reward: 2.100 (epsilon: 0.67)
+Frame:273323 | Total games:5200 | Mean reward: 3.200 (epsilon: 0.66)
+Frame:278931 | Total games:5300 | Mean reward: 3.500 (epsilon: 0.66)
+Frame:284532 | Total games:5400 | Mean reward: 3.200 (epsilon: 0.65)
+Frame:290059 | Total games:5500 | Mean reward: 4.300 (epsilon: 0.65)
+Frame:295501 | Total games:5600 | Mean reward: 2.900 (epsilon: 0.64)
+Frame:301157 | Total games:5700 | Mean reward: 3.400 (epsilon: 0.64)
+Frame:306742 | Total games:5800 | Mean reward: 3.700 (epsilon: 0.63)
+Frame:312543 | Total games:5900 | Mean reward: 5.000 (epsilon: 0.63)
+Frame:318244 | Total games:6000 | Mean reward: 3.700 (epsilon: 0.62)
+Frame:323924 | Total games:6100 | Mean reward: 5.100 (epsilon: 0.62)
+Frame:329576 | Total games:6200 | Mean reward: 3.500 (epsilon: 0.61)
+Frame:335371 | Total games:6300 | Mean reward: 3.700 (epsilon: 0.60)
+Frame:340853 | Total games:6400 | Mean reward: 3.000 (epsilon: 0.60)
+Frame:346443 | Total games:6500 | Mean reward: 3.500 (epsilon: 0.59)
+Frame:352145 | Total games:6600 | Mean reward: 3.700 (epsilon: 0.59)
+Frame:357749 | Total games:6700 | Mean reward: 3.900 (epsilon: 0.58)
+Frame:363359 | Total games:6800 | Mean reward: 3.800 (epsilon: 0.58)
+Frame:369020 | Total games:6900 | Mean reward: 3.900 (epsilon: 0.57)
+Frame:374723 | Total games:7000 | Mean reward: 3.400 (epsilon: 0.57)
+Frame:380572 | Total games:7100 | Mean reward: 3.100 (epsilon: 0.57)
+Frame:386219 | Total games:7200 | Mean reward: 3.900 (epsilon: 0.56)
+Frame:392059 | Total games:7300 | Mean reward: 3.800 (epsilon: 0.56)
+Frame:397665 | Total games:7400 | Mean reward: 2.900 (epsilon: 0.55)
+Frame:403175 | Total games:7500 | Mean reward: 2.300 (epsilon: 0.55)
+Frame:408863 | Total games:7600 | Mean reward: 1.900 (epsilon: 0.54)
+Frame:414697 | Total games:7700 | Mean reward: 3.800 (epsilon: 0.54)
+Frame:420432 | Total games:7800 | Mean reward: 3.400 (epsilon: 0.53)
+Frame:426203 | Total games:7900 | Mean reward: 2.300 (epsilon: 0.53)
+Frame:432033 | Total games:8000 | Mean reward: 3.800 (epsilon: 0.52)
+Frame:437810 | Total games:8100 | Mean reward: 3.600 (epsilon: 0.52)
+Frame:443719 | Total games:8200 | Mean reward: 4.500 (epsilon: 0.51)
+Frame:449575 | Total games:8300 | Mean reward: 3.000 (epsilon: 0.51)
+Frame:455348 | Total games:8400 | Mean reward: 2.300 (epsilon: 0.51)
+Frame:461033 | Total games:8500 | Mean reward: 3.800 (epsilon: 0.50)
+Frame:466900 | Total games:8600 | Mean reward: 3.500 (epsilon: 0.50)
+Frame:472482 | Total games:8700 | Mean reward: 2.300 (epsilon: 0.49)
+Frame:478226 | Total games:8800 | Mean reward: 2.200 (epsilon: 0.49)
+Frame:484189 | Total games:8900 | Mean reward: 4.000 (epsilon: 0.48)
+Frame:489968 | Total games:9000 | Mean reward: 3.500 (epsilon: 0.48)
+Frame:495869 | Total games:9100 | Mean reward: 4.100 (epsilon: 0.48)
+Frame:501846 | Total games:9200 | Mean reward: 2.600 (epsilon: 0.47)
+Frame:507625 | Total games:9300 | Mean reward: 3.800 (epsilon: 0.47)
+Frame:513408 | Total games:9400 | Mean reward: 2.900 (epsilon: 0.46)
+Frame:519373 | Total games:9500 | Mean reward: 3.400 (epsilon: 0.46)
+Frame:525500 | Total games:9600 | Mean reward: 3.400 (epsilon: 0.45)
+Frame:531285 | Total games:9700 | Mean reward: 4.200 (epsilon: 0.45)
+Frame:537288 | Total games:9800 | Mean reward: 3.000 (epsilon: 0.45)
+Frame:542916 | Total games:9900 | Mean reward: 2.100 (epsilon: 0.44)
+Frame:548880 | Total games:10000 | Mean reward: 3.200 (epsilon: 0.44)
+Mean Reward: 3.35
+New model saved with reward 3.35
+Hyperparameters saved: {'learning_rate': 0.001, 'batch_size': 64, 'gamma': 0.99, 'epsilon_decay': 0.9999985, 'target_update_freq': 500}
+Training data saved to ./Runs2/experiment_1/training_data.json
+Experiment 2/2: {'learning_rate': 0.0008, 'batch_size': 64, 'gamma': 0.99, 'epsilon_decay': 0.9999985, 'target_update_freq': 500}
+Frame:4913 | Total games:100 | Mean reward: 2.600 (epsilon: 0.99)
+Frame:9822 | Total games:200 | Mean reward: 1.100 (epsilon: 0.99)
+Frame:14933 | Total games:300 | Mean reward: 3.200 (epsilon: 0.98)
+Frame:20022 | Total games:400 | Mean reward: 2.700 (epsilon: 0.97)
+Frame:25099 | Total games:500 | Mean reward: 3.300 (epsilon: 0.96)
+Frame:30076 | Total games:600 | Mean reward: 3.300 (epsilon: 0.96)
+Frame:35059 | Total games:700 | Mean reward: 2.500 (epsilon: 0.95)
+Frame:40173 | Total games:800 | Mean reward: 3.000 (epsilon: 0.94)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: cumulative_reward ▃▅▁▃▃▄▆▃▁█▁▃▆▃▆▁▁▆▅▂▄▅▂▅▃▃▄▃▂▃▃▃▂█▂▂▃▃▁▃
+wandb:           episode ▁▁▁▂▂▃▃▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▆▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇██
+wandb:           epsilon ████▇▇▇▇▇▇▇▆▆▆▆▅▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁
+wandb:      frame_number ▁▁▁▁▂▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▄▅▅▅▆▆▆▆▆▆▇▇▇█████
+wandb:  immediate_reward ▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              loss ▃▇▃▇▃▄▅▆▁▃▁▅▃▂▂▅▃▇▃▁▃▅▄▆▃█▃▃▇▅▄▂▅█▄▃█▁▃▅
+wandb:       mean_reward ▁▄▅▃▄▆▄▄█▃▇▂▆▅▅▂▃▄▇█▃▆▃▂▄▅▄▆▃▇▃▄▅▆▆▃▆▄▃▄
+wandb: 
+wandb: Run summary:
+wandb: cumulative_reward 2
+wandb:           episode 10000
+wandb:           epsilon 0.44148
+wandb:      frame_number 545083
+wandb:  immediate_reward 0
+wandb:              loss 0.05046
+wandb:       mean_reward 2.7
+wandb: 
+wandb: 🚀 View run devoted-salad-326 at: https://wandb.ai/andreugaski-universitat-aut-noma-de-barcelona/DQN_Kaboom/runs/tv3iv7ke
+wandb: ⭐️ View project at: https://wandb.ai/andreugaski-universitat-aut-noma-de-barcelona/DQN_Kaboom
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /fhome/pmlai01/DQN/Working/wandb/wandb/run-20241212_181035-tv3iv7ke/logs
+Frame:45224 | Total games:900 | Mean reward: 2.500 (epsilon: 0.93)
+Frame:50326 | Total games:1000 | Mean reward: 2.800 (epsilon: 0.93)
+Frame:55309 | Total games:1100 | Mean reward: 3.100 (epsilon: 0.92)
+Frame:60552 | Total games:1200 | Mean reward: 4.400 (epsilon: 0.91)
+Frame:65547 | Total games:1300 | Mean reward: 3.400 (epsilon: 0.91)
+Frame:70606 | Total games:1400 | Mean reward: 3.700 (epsilon: 0.90)
+Frame:75793 | Total games:1500 | Mean reward: 2.500 (epsilon: 0.89)
+Frame:80945 | Total games:1600 | Mean reward: 4.600 (epsilon: 0.89)
+Frame:86206 | Total games:1700 | Mean reward: 2.600 (epsilon: 0.88)
+Frame:91513 | Total games:1800 | Mean reward: 3.600 (epsilon: 0.87)
+Frame:96592 | Total games:1900 | Mean reward: 2.800 (epsilon: 0.87)
+Frame:101811 | Total games:2000 | Mean reward: 2.700 (epsilon: 0.86)
+Frame:107107 | Total games:2100 | Mean reward: 2.900 (epsilon: 0.85)
+Frame:112310 | Total games:2200 | Mean reward: 3.600 (epsilon: 0.84)
+Frame:117406 | Total games:2300 | Mean reward: 2.400 (epsilon: 0.84)
+Frame:122692 | Total games:2400 | Mean reward: 3.900 (epsilon: 0.83)
+Frame:127930 | Total games:2500 | Mean reward: 1.800 (epsilon: 0.83)
+Frame:133127 | Total games:2600 | Mean reward: 3.600 (epsilon: 0.82)
+Frame:138352 | Total games:2700 | Mean reward: 3.600 (epsilon: 0.81)
+Frame:143669 | Total games:2800 | Mean reward: 2.900 (epsilon: 0.81)
+Frame:149044 | Total games:2900 | Mean reward: 4.000 (epsilon: 0.80)
+Frame:154308 | Total games:3000 | Mean reward: 3.400 (epsilon: 0.79)
+Frame:159493 | Total games:3100 | Mean reward: 2.400 (epsilon: 0.79)
+Frame:164715 | Total games:3200 | Mean reward: 2.500 (epsilon: 0.78)
+Frame:170080 | Total games:3300 | Mean reward: 2.900 (epsilon: 0.77)
+Frame:175536 | Total games:3400 | Mean reward: 3.600 (epsilon: 0.77)
+Frame:180935 | Total games:3500 | Mean reward: 3.300 (epsilon: 0.76)
+Frame:186378 | Total games:3600 | Mean reward: 2.400 (epsilon: 0.76)
+Frame:191628 | Total games:3700 | Mean reward: 2.700 (epsilon: 0.75)
+Frame:197045 | Total games:3800 | Mean reward: 2.900 (epsilon: 0.74)
+Frame:202419 | Total games:3900 | Mean reward: 2.700 (epsilon: 0.74)
+Frame:207654 | Total games:4000 | Mean reward: 3.500 (epsilon: 0.73)
+Frame:213124 | Total games:4100 | Mean reward: 2.800 (epsilon: 0.73)
+Frame:218409 | Total games:4200 | Mean reward: 3.400 (epsilon: 0.72)
+Frame:223724 | Total games:4300 | Mean reward: 3.500 (epsilon: 0.71)
+Frame:229208 | Total games:4400 | Mean reward: 1.900 (epsilon: 0.71)
+Frame:234581 | Total games:4500 | Mean reward: 3.100 (epsilon: 0.70)
+Frame:239993 | Total games:4600 | Mean reward: 3.300 (epsilon: 0.70)
+Frame:245290 | Total games:4700 | Mean reward: 2.400 (epsilon: 0.69)
+Frame:250789 | Total games:4800 | Mean reward: 3.600 (epsilon: 0.69)
+Frame:256106 | Total games:4900 | Mean reward: 2.800 (epsilon: 0.68)
+Frame:261670 | Total games:5000 | Mean reward: 3.400 (epsilon: 0.68)
+Frame:267200 | Total games:5100 | Mean reward: 4.200 (epsilon: 0.67)
+Frame:272689 | Total games:5200 | Mean reward: 2.300 (epsilon: 0.66)
+Frame:278324 | Total games:5300 | Mean reward: 3.400 (epsilon: 0.66)
+Frame:283880 | Total games:5400 | Mean reward: 2.200 (epsilon: 0.65)
+Frame:289334 | Total games:5500 | Mean reward: 2.700 (epsilon: 0.65)
+Frame:294825 | Total games:5600 | Mean reward: 4.000 (epsilon: 0.64)
+Frame:300373 | Total games:5700 | Mean reward: 3.200 (epsilon: 0.64)
+Frame:305928 | Total games:5800 | Mean reward: 3.200 (epsilon: 0.63)
+Frame:311302 | Total games:5900 | Mean reward: 2.600 (epsilon: 0.63)
+Frame:316708 | Total games:6000 | Mean reward: 2.600 (epsilon: 0.62)
+Frame:322225 | Total games:6100 | Mean reward: 2.800 (epsilon: 0.62)
+Frame:327991 | Total games:6200 | Mean reward: 3.100 (epsilon: 0.61)
+Frame:333606 | Total games:6300 | Mean reward: 3.200 (epsilon: 0.61)
+Frame:339201 | Total games:6400 | Mean reward: 2.100 (epsilon: 0.60)
+Frame:344706 | Total games:6500 | Mean reward: 2.400 (epsilon: 0.60)
+Frame:350374 | Total games:6600 | Mean reward: 3.400 (epsilon: 0.59)
+Frame:355875 | Total games:6700 | Mean reward: 4.800 (epsilon: 0.59)
+Frame:361291 | Total games:6800 | Mean reward: 2.900 (epsilon: 0.58)
+Frame:367032 | Total games:6900 | Mean reward: 3.600 (epsilon: 0.58)
+Frame:372628 | Total games:7000 | Mean reward: 3.600 (epsilon: 0.57)
+Frame:378336 | Total games:7100 | Mean reward: 4.600 (epsilon: 0.57)
+Frame:384082 | Total games:7200 | Mean reward: 3.400 (epsilon: 0.56)
+Frame:389679 | Total games:7300 | Mean reward: 2.600 (epsilon: 0.56)
+Frame:395450 | Total games:7400 | Mean reward: 3.300 (epsilon: 0.55)
+Frame:400994 | Total games:7500 | Mean reward: 3.800 (epsilon: 0.55)
+Frame:406751 | Total games:7600 | Mean reward: 3.600 (epsilon: 0.54)
+Frame:412324 | Total games:7700 | Mean reward: 3.100 (epsilon: 0.54)
+Frame:417874 | Total games:7800 | Mean reward: 4.200 (epsilon: 0.53)
+Frame:423602 | Total games:7900 | Mean reward: 3.800 (epsilon: 0.53)
+Frame:429412 | Total games:8000 | Mean reward: 4.500 (epsilon: 0.53)
+Frame:435172 | Total games:8100 | Mean reward: 4.100 (epsilon: 0.52)
+Frame:440975 | Total games:8200 | Mean reward: 4.400 (epsilon: 0.52)
+Frame:446517 | Total games:8300 | Mean reward: 3.200 (epsilon: 0.51)
+Frame:452389 | Total games:8400 | Mean reward: 3.200 (epsilon: 0.51)
+Frame:458011 | Total games:8500 | Mean reward: 3.300 (epsilon: 0.50)
+Frame:463810 | Total games:8600 | Mean reward: 4.900 (epsilon: 0.50)
+Frame:469641 | Total games:8700 | Mean reward: 3.000 (epsilon: 0.49)
+Frame:475349 | Total games:8800 | Mean reward: 3.700 (epsilon: 0.49)
+Frame:481006 | Total games:8900 | Mean reward: 3.600 (epsilon: 0.49)
+Frame:486758 | Total games:9000 | Mean reward: 3.100 (epsilon: 0.48)
+Frame:492801 | Total games:9100 | Mean reward: 3.400 (epsilon: 0.48)
+Frame:498719 | Total games:9200 | Mean reward: 3.300 (epsilon: 0.47)
+Frame:504538 | Total games:9300 | Mean reward: 2.800 (epsilon: 0.47)
+Frame:510378 | Total games:9400 | Mean reward: 3.200 (epsilon: 0.47)
+Frame:516014 | Total games:9500 | Mean reward: 2.500 (epsilon: 0.46)
+Frame:521851 | Total games:9600 | Mean reward: 3.300 (epsilon: 0.46)
+Frame:527773 | Total games:9700 | Mean reward: 2.600 (epsilon: 0.45)
+Frame:533558 | Total games:9800 | Mean reward: 4.000 (epsilon: 0.45)
+Frame:539332 | Total games:9900 | Mean reward: 2.900 (epsilon: 0.45)
+Frame:545083 | Total games:10000 | Mean reward: 2.700 (epsilon: 0.44)
+Mean Reward: 3.25
+New model saved with reward 3.25
+Hyperparameters saved: {'learning_rate': 0.0008, 'batch_size': 64, 'gamma': 0.99, 'epsilon_decay': 0.9999985, 'target_update_freq': 500}
+Training data saved to ./Runs2/experiment_2/training_data.json
+Best model information saved at: ./Runs2/best_model_info.txt
+Best Hyperparameters: {'learning_rate': 0.001, 'batch_size': 64, 'gamma': 0.99, 'epsilon_decay': 0.9999985, 'target_update_freq': 500}
+Best Mean Reward: 3.35

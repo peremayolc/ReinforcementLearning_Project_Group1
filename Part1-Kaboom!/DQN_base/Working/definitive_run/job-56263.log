@@ -1,0 +1,102 @@
+A.L.E: Arcade Learning Environment (version 0.10.1+unknown)
+[Powered by Stella]
+/fhome/pmlai01/.local/lib/python3.8/site-packages/gymnasium/wrappers/rendering.py:283: UserWarning: [33mWARN: Overwriting existing videos at /export/fhome/pmlai01/DQN_base/Working/definitive_run/videos folder (try specifying a different `video_folder` for the `RecordVideo` wrapper if this is not desired)[0m
+  logger.warn(
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: andreugaski (andreugaski-universitat-aut-noma-de-barcelona). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.18.7
+wandb: Run data is saved locally in /fhome/pmlai01/DQN/Working/wandb/wandb/run-20241215_210640-oxaj7kru
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run kind-music-2
+wandb: ⭐️ View project at https://wandb.ai/andreugaski-universitat-aut-noma-de-barcelona/DQN_Kaboom_base
+wandb: 🚀 View run at https://wandb.ai/andreugaski-universitat-aut-noma-de-barcelona/DQN_Kaboom_base/runs/oxaj7kru
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: cumulative_reward ▁▁▁▁▁▁▂▁▂▁▁▁▃▂▁▂▁▂▅▁▂▃▅▄▄▅▁▄▃▁▅▅▂▂▅▇▄▇█▇
+wandb:           episode ▁▁▁▂▂▃▃▃▃▃▃▃▃▄▄▄▄▄▄▄▄▄▄▅▅▆▆▆▆▇▇▇▇▇▇▇▇███
+wandb:           epsilon ██▇▇▇▇▇▆▆▆▅▅▅▅▅▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:      frame_number ▁▁▁▁▂▂▂▂▃▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▅▅▅▆▆▆▆▇▇▇▇▇██
+wandb:  immediate_reward ▁▁▂▁▁▁▁█▁▁▂▃▁▂▁▁▁▁▃▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              loss ▁▁▁▁▁▂▂▂▂▃▃▃▃▄▃▃▂▃▃▂▂▁▂▂▁▁▁▁▁▁▁▁▁▁▂▃▁▁█▁
+wandb:       mean_reward ▁▁▁▁▁▁▁▁▁▁▁▂▁▂▂▂▂▂▂▂▂▂▂▃▃▅▃▃▅▅▄▆▆▆▇▇▇███
+wandb: 
+wandb: Run summary:
+wandb: cumulative_reward 93
+wandb:           episode 4732
+wandb:           epsilon 0.02
+wandb:      frame_number 800000
+wandb:  immediate_reward 0
+wandb:              loss 0.41722
+wandb:       mean_reward 87.8
+wandb: 
+wandb: 🚀 View run kind-music-2 at: https://wandb.ai/andreugaski-universitat-aut-noma-de-barcelona/DQN_Kaboom_base/runs/oxaj7kru
+wandb: ⭐️ View project at: https://wandb.ai/andreugaski-universitat-aut-noma-de-barcelona/DQN_Kaboom_base
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /fhome/pmlai01/DQN/Working/wandb/wandb/run-20241215_210640-oxaj7kru/logs
+cuda
+1.0.0
+Standard Env.        : (210, 160)
+MaxAndSkipEnv        : (210, 160)
+RecordVideo          : Applied
+ProcessFrame84       : (84, 84)
+BufferWrapper        : (4, 84, 84)
+ScaledFloatFrame     : (4, 84, 84)
+EnvCompatibility     : Applied
+Experiment 1/1: {'learning_rate': 0.0005, 'batch_size': 64, 'gamma': 0.99, 'epsilon_decay': 0.999992, 'target_update_freq': 500}
+Frame:4998 | Total games:100 | Mean reward: 2.300 (epsilon: 0.96)
+Frame:10018 | Total games:200 | Mean reward: 5.200 (epsilon: 0.92)
+Frame:15041 | Total games:300 | Mean reward: 4.200 (epsilon: 0.89)
+Frame:20263 | Total games:400 | Mean reward: 4.100 (epsilon: 0.85)
+Frame:25696 | Total games:500 | Mean reward: 4.100 (epsilon: 0.81)
+Frame:31170 | Total games:600 | Mean reward: 3.500 (epsilon: 0.78)
+Frame:36796 | Total games:700 | Mean reward: 4.500 (epsilon: 0.75)
+Frame:42449 | Total games:800 | Mean reward: 6.000 (epsilon: 0.71)
+Frame:48380 | Total games:900 | Mean reward: 4.800 (epsilon: 0.68)
+Frame:54643 | Total games:1000 | Mean reward: 10.800 (epsilon: 0.65)
+Frame:60845 | Total games:1100 | Mean reward: 9.000 (epsilon: 0.61)
+Frame:67490 | Total games:1200 | Mean reward: 7.900 (epsilon: 0.58)
+Frame:74061 | Total games:1300 | Mean reward: 10.800 (epsilon: 0.55)
+Frame:80791 | Total games:1400 | Mean reward: 6.500 (epsilon: 0.52)
+Frame:87648 | Total games:1500 | Mean reward: 12.300 (epsilon: 0.50)
+Frame:94965 | Total games:1600 | Mean reward: 8.100 (epsilon: 0.47)
+Frame:102540 | Total games:1700 | Mean reward: 11.400 (epsilon: 0.44)
+Frame:109842 | Total games:1800 | Mean reward: 9.500 (epsilon: 0.42)
+Frame:118327 | Total games:1900 | Mean reward: 13.000 (epsilon: 0.39)
+Frame:126815 | Total games:2000 | Mean reward: 21.000 (epsilon: 0.36)
+Frame:135313 | Total games:2100 | Mean reward: 18.900 (epsilon: 0.34)
+Frame:144347 | Total games:2200 | Mean reward: 17.300 (epsilon: 0.32)
+Frame:153668 | Total games:2300 | Mean reward: 21.500 (epsilon: 0.29)
+Frame:163561 | Total games:2400 | Mean reward: 23.600 (epsilon: 0.27)
+Frame:174075 | Total games:2500 | Mean reward: 33.600 (epsilon: 0.25)
+Frame:184990 | Total games:2600 | Mean reward: 24.300 (epsilon: 0.23)
+Frame:195960 | Total games:2700 | Mean reward: 26.400 (epsilon: 0.21)
+Frame:208147 | Total games:2800 | Mean reward: 45.900 (epsilon: 0.19)
+Frame:220710 | Total games:2900 | Mean reward: 44.500 (epsilon: 0.17)
+Frame:232463 | Total games:3000 | Mean reward: 36.500 (epsilon: 0.16)
+Frame:246415 | Total games:3100 | Mean reward: 34.500 (epsilon: 0.14)
+Frame:260079 | Total games:3200 | Mean reward: 50.700 (epsilon: 0.12)
+Frame:273869 | Total games:3300 | Mean reward: 51.500 (epsilon: 0.11)
+Frame:288037 | Total games:3400 | Mean reward: 51.500 (epsilon: 0.10)
+Frame:303898 | Total games:3500 | Mean reward: 67.900 (epsilon: 0.09)
+Frame:319505 | Total games:3600 | Mean reward: 53.600 (epsilon: 0.08)
+Frame:337371 | Total games:3700 | Mean reward: 64.300 (epsilon: 0.07)
+Frame:360727 | Total games:3800 | Mean reward: 71.800 (epsilon: 0.06)
+Frame:384894 | Total games:3900 | Mean reward: 73.900 (epsilon: 0.05)
+Frame:413809 | Total games:4000 | Mean reward: 64.100 (epsilon: 0.04)
+Frame:448831 | Total games:4100 | Mean reward: 79.300 (epsilon: 0.03)
+Frame:501353 | Total games:4200 | Mean reward: 78.900 (epsilon: 0.02)
+Frame:551123 | Total games:4300 | Mean reward: 83.100 (epsilon: 0.02)
+Frame:557271 | Total games:4316 | Mean reward: 101.600 (epsilon: 0.02)
+Frame:602903 | Total games:4400 | Mean reward: 89.900 (epsilon: 0.02)
+Frame:657009 | Total games:4500 | Mean reward: 79.400 (epsilon: 0.02)
+Frame:720180 | Total games:4600 | Mean reward: 82.200 (epsilon: 0.02)
+Frame:780707 | Total games:4700 | Mean reward: 80.800 (epsilon: 0.02)
+Frame:784226 | Total games:4707 | Mean reward: 101.000 (epsilon: 0.02)
+Mean Reward: 87.02
+New model saved with reward 87.02
+Hyperparameters saved: {'learning_rate': 0.0005, 'batch_size': 64, 'gamma': 0.99, 'epsilon_decay': 0.999992, 'target_update_freq': 500}
+Training data saved to ./definitive_run/experiment_1/training_data.json
+Best model information saved at: ./definitive_run/best_model_info.txt
+Best Hyperparameters: {'learning_rate': 0.0005, 'batch_size': 64, 'gamma': 0.99, 'epsilon_decay': 0.999992, 'target_update_freq': 500}
+Best Mean Reward: 87.02

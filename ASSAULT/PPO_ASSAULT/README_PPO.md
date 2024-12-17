@@ -2,7 +2,7 @@
 #### By Joan Bayona Corbalán (1667446), Pere Mayol Carbonell (1669503) and Andreu Gascón Marzo (1670919)
 
 # FOR ASSAULT
-## In here you will find information on how to run the PPO part of the ASSAULT environment. The specific requirements can be found in the [REQUIREMENTSFILE](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/ASSAULT/PPO_ASSAULT/requirements.txt)
+## In here you will find information on how to run the PPO part of the ASSAULT environment. The specific requirements can be found in the [REQUIREMENTSFILE](https://github.com/peremayolc/ReinforcementLearning_Project_Group1/blob/main/requirements.txt)
 
 #### For the PPO model used to solve the Assault environment, there are various important parts, including the final model, the videos of the trained model and also the trials done during the different stages of the project.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
